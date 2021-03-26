@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9577AFD9-EFE8-4834-9AC1-5FFB27A5A319}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TT_QLKVC</RootNamespace>
+    <AssemblyName>TT_QLKVC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.1.4\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Icons8.UI, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Icons8.UI.0.2.0\lib\net40\Icons8.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CColor.cs" />
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="fBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>fBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBaoCaoLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaoCaoLuong.Designer.cs">
+      <DependentUpon>fBaoCaoLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyDichVu.Designer.cs">
+      <DependentUpon>fQuanLyDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyKhu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyKhu.Designer.cs">
+      <DependentUpon>fQuanLyKhu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyLoaiDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyLoaiDV.Designer.cs">
+      <DependentUpon>fQuanLyLoaiDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyNhanVien.Designer.cs">
+      <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyTroChoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyTroChoi.Designer.cs">
+      <DependentUpon>fQuanLyTroChoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyVe.Designer.cs">
+      <DependentUpon>fQuanLyVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThanhToanHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThanhToanHoaDon.Designer.cs">
+      <DependentUpon>fThanhToanHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>fThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fBaoCaoDoanhThu.resx">
+      <DependentUpon>fBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBaoCaoLuong.resx">
+      <DependentUpon>fBaoCaoLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyDichVu.resx">
+      <DependentUpon>fQuanLyDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyKhu.resx">
+      <DependentUpon>fQuanLyKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyLoaiDV.resx">
+      <DependentUpon>fQuanLyLoaiDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyNhanVien.resx">
+      <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyTroChoi.resx">
+      <DependentUpon>fQuanLyTroChoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyVe.resx">
+      <DependentUpon>fQuanLyVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThanhToanHoaDon.resx">
+      <DependentUpon>fThanhToanHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThongTinTaiKhoan.resx">
+      <DependentUpon>fThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-combo-chart-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tasks-100 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-card-wallet-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wallet-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tasks-100 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-macos-close-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-macos-close-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-macos-minimize-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-theme-park-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-theme-park-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-theme-park-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tasks-100 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-combo-chart-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wallet-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-96 %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

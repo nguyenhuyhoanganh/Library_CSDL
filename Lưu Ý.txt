@@ -1,0 +1,27 @@
+-1.button Thông tin tài khoản: thay đổi text = tên nhân viên khi đăng nhập.
+
+-2.bỏ mật khẩu ở bảng nhân viên, khi thêm set mật khẩu = null, 
+	muốn có mật khẩu sau này dùng button đăng ký ở form login, đổi mất khẩu ở Thông Tin Cá Nhân
+
+-3.Khóa Phụ MÃ LOẠI DỊCH VỤ sẽ đổ ra combobox để chọn trong form Dịch Vụ
+
+-4.Thêm thuộc tính status ở bảng nhân viên:(lấy ra ở lúc login bằng code để phân quyền)
+	+Cơ Bản: nhân viên CƠ BẢN ngoài toàn quyền form VÉ, những form khác chỉ đc XEM và TÌM KIẾM
+	+Quản Lý: Quản Lý được toàn quyền ở các form, đổ khóa phụ form KHU sang combobox formNhanVien, MÃ KHU, MÃ NHÂN VIÊN sang cb formVE 
+		 Khi Quản Lý Thay Đổi Được Status ở form nhân viên, đổi status sang quản lý
+		(lúc này ở CSDL tự set MÃ KHU của nhân viên đó = NUll, để không thuộc khu nào => có toàn quyền)
+
+-5.(NHÂN VIÊn CƠ BẢN ĐĂNG NHÂP):Về MÃ NHÂN VIÊN, MÃ KHU lấy ra sẽ SET CỨNG theo MÃ NHÂN VIÊN của người đăng nhập 
+	và MÃ KHU người đăng nhập(là nhân viên ở trong khu mình trực thuộc)=> dùng ở form VÉ
+----------------ĐẠI DIỆN CHO VIỆC PHÂN QUYỀN VỚI NHÂN VIÊN< MỖI NHÂN VIÊN QUYỀN Ở 1 KHU--------------
+
+-6.ĐỀ NGHỊ THÊM BẢNG ACCOUT RIÊNG(BỎ MK ở NHÂN VIÊN)
+	BAN ĐẦU có 1 NHÂN VIÊN là quản lý, tài khoản admin, mật khẩu 123456, có toàn quyền
+
+-7. TỰ TĂNG MÃ KHI THÊM( Thực hiện bằng code )
+ ???CẦN TƯ VẤN:???
+Khi nhấn Thêm ô mã sẽ set onlyread = true(Để ng dùng không động vào mã, việc mã sẽ tự hiện text do code)
+???có hay không thêm 1 button XÁC NHẬN, HỦY 
+(để khi ấn button thêm chỉ set cứng mã chính tự tăng, mã phụ theo mã của nhân viên Cơ Bản, hoặc cho chọn ở nhân viên Quản Lý)
+(để khi ấn button xóa hoặc sửa thì cho chọn mã chính ở người cần xóa cần sửa)
+(sau cùng ấn XÁC NHẬN để xác nhận hoặc ấn HỦY để không thực hiện nữa)
