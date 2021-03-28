@@ -46,3 +46,27 @@ C:\Users\huyho\OneDrive\Desktop\TT CSDL\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CoreC
 C:\Users\huyho\OneDrive\Desktop\TT CSDL\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
 C:\Users\huyho\OneDrive\Desktop\TT CSDL\TT_QLKVC\obj\Debug\TT_QLKVC.exe
 C:\Users\huyho\OneDrive\Desktop\TT CSDL\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csprojAssemblyReference.cache
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBaoCaoDoanhThu.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBaoCaoLuong.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyDichVu.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyKhu.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyLoaiDV.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyTroChoi.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyVe.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThanhToanHoaDon.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThongTinTaiKhoan.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Manager.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Properties.Resources.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.GenerateResource.cache
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CoreCompileInputs.cache
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.exe
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.exe.config
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.exe
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.pdb
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\Guna.UI2.dll
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\bin\Debug\Icons8.UI.dll
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyNhanVien.resources
+C:\Users\minht\source\repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete

@@ -1,4 +1,4 @@
-﻿namespace Design_Login_Form
+﻿namespace TT_QLKVC
 {
     partial class fQuanLyNhanVien
     {
@@ -127,6 +127,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtgvNV
             // 
@@ -223,7 +224,6 @@
             this.groupBox3.Size = new System.Drawing.Size(269, 639);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thay Đổi";
             // 
             // label10
             // 
@@ -237,6 +237,9 @@
             // comboBox_cv
             // 
             this.comboBox_cv.FormattingEnabled = true;
+            this.comboBox_cv.Items.AddRange(new object[] {
+            "Nhân viên",
+            "Quản lý"});
             this.comboBox_cv.Location = new System.Drawing.Point(26, 418);
             this.comboBox_cv.Name = "comboBox_cv";
             this.comboBox_cv.Size = new System.Drawing.Size(210, 24);
@@ -276,7 +279,7 @@
             // 
             // dtpkNgaySinh_NV
             // 
-            this.dtpkNgaySinh_NV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkNgaySinh_NV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpkNgaySinh_NV.Location = new System.Drawing.Point(26, 210);
             this.dtpkNgaySinh_NV.Name = "dtpkNgaySinh_NV";
             this.dtpkNgaySinh_NV.Size = new System.Drawing.Size(210, 22);

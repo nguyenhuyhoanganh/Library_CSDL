@@ -1,18 +1,20 @@
-﻿using Design_Login_Form.DAO;
+﻿//using Design_Login_Form.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Windows.Forms;
+using Guna.UI2.WinForms;
+using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
 //using s
-namespace Design_Login_Form
+namespace TT_QLKVC
 {
     public partial class fQuanLyNhanVien : Form
     {
@@ -29,7 +31,7 @@ namespace Design_Login_Form
         private void btnThemNV_Click(object sender, EventArgs e)
         {
             ktgt();
-            if (txbDiaChi.Text == "" || txbLuong_NV.Text == "" || comboBox1.Text == "" || txbMaNhanVien.Text == "" || txbMatKhau.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
+            if (txbDiaChi.Text == "" || txbLuong_NV.Text == "" || comboBox1.Text == "" || txbMaNhanVien.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
             {
                 MessageBox.Show("Mời nhập đầy đủ các thông tin của nhân viên này", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -44,7 +46,7 @@ namespace Design_Login_Form
                 using (SqlConnection sqlcon = new SqlConnection(constr))
                 {
                     sqlcon.Open();
-                    SqlCommand command = new SqlCommand("execute themnv N'" + txbMaNhanVien.Text + "', N'" + txbTen_NV.Text + "', '" + dtpkNgaySinh_NV.Value + "', N'" + txbSD_NV.Text + "', N'" + gioitinh + "', N'" + txbLuong_NV.Text + "', N'" + txbMatKhau.Text + "', N'" + comboBox1.Text + "', N'" + txbDiaChi.Text + "'", sqlcon);
+                    SqlCommand command = new SqlCommand("execute themnv N'" + txbMaNhanVien.Text + "', N'" + txbTen_NV.Text + "', '" + dtpkNgaySinh_NV.Value + "', N'" + txbSD_NV.Text + "', N'" + gioitinh + "', N'" + txbLuong_NV.Text  + "', N'" + comboBox1.Text + "', N'" + txbDiaChi.Text + "'", sqlcon);
                     //sqlcon.InfoMessage += new SqlInfoMessageEventHandler(InfoMessageHandler);
                     command.ExecuteNonQuery();
                 }
@@ -156,6 +158,12 @@ namespace Design_Login_Form
         }
 
         DateTime ns;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBox3.Text = "Thông tin nhân viên";
+            
+        }
 
         private void dtgvNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
