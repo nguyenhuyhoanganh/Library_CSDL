@@ -43,6 +43,9 @@
             this.txbTimKiemma = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rbtnNu = new System.Windows.Forms.RadioButton();
+            this.rbtnNam = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox_cv = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,12 +64,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.txbMaNhanVien = new System.Windows.Forms.TextBox();
-            this.rbtnNam = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbtnNu = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.label_gt = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,6 +97,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -105,6 +109,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -116,6 +121,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -139,6 +145,7 @@
             this.dtgvNV.RowTemplate.Height = 24;
             this.dtgvNV.Size = new System.Drawing.Size(649, 405);
             this.dtgvNV.TabIndex = 0;
+            this.dtgvNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNV_CellClick);
             // 
             // groupBox2
             // 
@@ -196,11 +203,11 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Tìm Kiếm";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.btnTimKiemNV_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.rbtnNu);
-            this.groupBox3.Controls.Add(this.rbtnNam);
+            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.comboBox_cv);
             this.groupBox3.Controls.Add(this.label9);
@@ -224,6 +231,40 @@
             this.groupBox3.Size = new System.Drawing.Size(269, 639);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label_gt);
+            this.groupBox4.Controls.Add(this.rbtnNu);
+            this.groupBox4.Controls.Add(this.rbtnNam);
+            this.groupBox4.Location = new System.Drawing.Point(26, 448);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 61);
+            this.groupBox4.TabIndex = 23;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Giới tính";
+            // 
+            // rbtnNu
+            // 
+            this.rbtnNu.AutoSize = true;
+            this.rbtnNu.Location = new System.Drawing.Point(127, 21);
+            this.rbtnNu.Name = "rbtnNu";
+            this.rbtnNu.Size = new System.Drawing.Size(47, 21);
+            this.rbtnNu.TabIndex = 1;
+            this.rbtnNu.TabStop = true;
+            this.rbtnNu.Text = "Nữ";
+            this.rbtnNu.UseVisualStyleBackColor = true;
+            // 
+            // rbtnNam
+            // 
+            this.rbtnNam.AutoSize = true;
+            this.rbtnNam.Location = new System.Drawing.Point(34, 21);
+            this.rbtnNam.Name = "rbtnNam";
+            this.rbtnNam.Size = new System.Drawing.Size(58, 21);
+            this.rbtnNam.TabIndex = 0;
+            this.rbtnNam.TabStop = true;
+            this.rbtnNam.Text = "Nam";
+            this.rbtnNam.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -279,11 +320,13 @@
             // 
             // dtpkNgaySinh_NV
             // 
-            this.dtpkNgaySinh_NV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkNgaySinh_NV.CustomFormat = "dd-MM-yyyy";
+            this.dtpkNgaySinh_NV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgaySinh_NV.Location = new System.Drawing.Point(26, 210);
             this.dtpkNgaySinh_NV.Name = "dtpkNgaySinh_NV";
             this.dtpkNgaySinh_NV.Size = new System.Drawing.Size(210, 22);
             this.dtpkNgaySinh_NV.TabIndex = 14;
+            this.dtpkNgaySinh_NV.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -362,6 +405,7 @@
             this.button7.TabIndex = 3;
             this.button7.Text = "Hủy";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -373,6 +417,7 @@
             this.button6.TabIndex = 2;
             this.button6.Text = "Lưu";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // txbMaNhanVien
             // 
@@ -381,41 +426,17 @@
             this.txbMaNhanVien.Size = new System.Drawing.Size(210, 22);
             this.txbMaNhanVien.TabIndex = 0;
             // 
-            // rbtnNam
+            // label_gt
             // 
-            this.rbtnNam.AutoSize = true;
-            this.rbtnNam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnNam.CheckedState.BorderThickness = 0;
-            this.rbtnNam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnNam.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbtnNam.CheckedState.InnerOffset = -4;
-            this.rbtnNam.Location = new System.Drawing.Point(70, 448);
-            this.rbtnNam.Name = "rbtnNam";
-            this.rbtnNam.Size = new System.Drawing.Size(58, 21);
-            this.rbtnNam.TabIndex = 21;
-            this.rbtnNam.Text = "Nam";
-            this.rbtnNam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbtnNam.UncheckedState.BorderThickness = 2;
-            this.rbtnNam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbtnNam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rbtnNu
-            // 
-            this.rbtnNu.AutoSize = true;
-            this.rbtnNu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnNu.CheckedState.BorderThickness = 0;
-            this.rbtnNu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnNu.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbtnNu.CheckedState.InnerOffset = -4;
-            this.rbtnNu.Location = new System.Drawing.Point(151, 448);
-            this.rbtnNu.Name = "rbtnNu";
-            this.rbtnNu.Size = new System.Drawing.Size(47, 21);
-            this.rbtnNu.TabIndex = 22;
-            this.rbtnNu.Text = "Nữ";
-            this.rbtnNu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbtnNu.UncheckedState.BorderThickness = 2;
-            this.rbtnNu.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbtnNu.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.label_gt.AutoSize = true;
+            this.label_gt.BackColor = System.Drawing.SystemColors.Control;
+            this.label_gt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_gt.Location = new System.Drawing.Point(71, 21);
+            this.label_gt.Name = "label_gt";
+            this.label_gt.Size = new System.Drawing.Size(75, 25);
+            this.label_gt.TabIndex = 24;
+            this.label_gt.Text = "label12";
+            this.label_gt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fQuanLyNhanVien
             // 
@@ -429,12 +450,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fQuanLyNhanVien";
             this.Text = "fQuanLyNhanVien";
+            this.Load += new System.EventHandler(this.fQuanLyNhanVien_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -473,7 +497,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbTen_NV;
         private System.Windows.Forms.ComboBox comboBox1;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtnNam;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtnNu;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton rbtnNu;
+        private System.Windows.Forms.RadioButton rbtnNam;
+        private System.Windows.Forms.Label label_gt;
     }
 }
