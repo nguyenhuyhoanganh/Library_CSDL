@@ -1,4 +1,10 @@
-alter table nhanvien add chucvu nvarchar(20)
+alter table nhanvien add chucvu nvarchar(20)--(nhân viên/quản lý)
+alter table nhanvien add MATKHAU nchar(20)
+alter table ve add giavenl money 
+alter table ve add giavete money 
+alter table ve add trangthai NVARCHAR(20)
+alter table bienlai add trangthai NVARCHAR(50)--(đã thanh toán/chưa thanh toán)
+alter table bienlai add DONGIA money
 --select*from NHANVIEN
 --dangnhap: Đăng nhập vào chương trình quản lý
 CREATE OR ALTER PROC dangNhap @MANV NCHAR(10), @MATKHAU NVARCHAR(20)
