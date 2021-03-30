@@ -43,6 +43,8 @@
             this.txbTimKiemma = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox_mk = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label_gt = new System.Windows.Forms.Label();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
@@ -65,9 +67,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.txbMaNhanVien = new System.Windows.Forms.TextBox();
-            this.radioButton_auto = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_mk = new System.Windows.Forms.TextBox();
+            this.radioButton_auto = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -211,9 +211,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.radioButton_auto);
             this.groupBox3.Controls.Add(this.textBox_mk);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.radioButton_auto);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.comboBox_cv);
@@ -239,12 +239,28 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
+            // textBox_mk
+            // 
+            this.textBox_mk.Location = new System.Drawing.Point(33, 554);
+            this.textBox_mk.Name = "textBox_mk";
+            this.textBox_mk.Size = new System.Drawing.Size(210, 22);
+            this.textBox_mk.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(33, 534);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Mật khẩu:";
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label_gt);
             this.groupBox4.Controls.Add(this.rbtnNu);
             this.groupBox4.Controls.Add(this.rbtnNam);
-            this.groupBox4.Location = new System.Drawing.Point(26, 448);
+            this.groupBox4.Location = new System.Drawing.Point(30, 468);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 61);
             this.groupBox4.TabIndex = 23;
@@ -288,7 +304,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 398);
+            this.label10.Location = new System.Drawing.Point(30, 418);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 17);
             this.label10.TabIndex = 20;
@@ -300,7 +316,7 @@
             this.comboBox_cv.Items.AddRange(new object[] {
             "Nhân viên",
             "Quản lý"});
-            this.comboBox_cv.Location = new System.Drawing.Point(26, 418);
+            this.comboBox_cv.Location = new System.Drawing.Point(30, 438);
             this.comboBox_cv.Name = "comboBox_cv";
             this.comboBox_cv.Size = new System.Drawing.Size(210, 24);
             this.comboBox_cv.TabIndex = 19;
@@ -308,7 +324,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 346);
+            this.label9.Location = new System.Drawing.Point(30, 366);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 17);
             this.label9.TabIndex = 18;
@@ -316,7 +332,7 @@
             // 
             // txbLuong_NV
             // 
-            this.txbLuong_NV.Location = new System.Drawing.Point(26, 366);
+            this.txbLuong_NV.Location = new System.Drawing.Point(30, 386);
             this.txbLuong_NV.Name = "txbLuong_NV";
             this.txbLuong_NV.Size = new System.Drawing.Size(210, 22);
             this.txbLuong_NV.TabIndex = 17;
@@ -324,7 +340,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 294);
+            this.label6.Location = new System.Drawing.Point(30, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 17);
             this.label6.TabIndex = 16;
@@ -332,7 +348,7 @@
             // 
             // txbSD_NV
             // 
-            this.txbSD_NV.Location = new System.Drawing.Point(26, 314);
+            this.txbSD_NV.Location = new System.Drawing.Point(30, 334);
             this.txbSD_NV.Name = "txbSD_NV";
             this.txbSD_NV.Size = new System.Drawing.Size(210, 22);
             this.txbSD_NV.TabIndex = 15;
@@ -341,7 +357,7 @@
             // 
             this.dtpkNgaySinh_NV.CustomFormat = "dd-MM-yyyy";
             this.dtpkNgaySinh_NV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkNgaySinh_NV.Location = new System.Drawing.Point(26, 210);
+            this.dtpkNgaySinh_NV.Location = new System.Drawing.Point(30, 230);
             this.dtpkNgaySinh_NV.Name = "dtpkNgaySinh_NV";
             this.dtpkNgaySinh_NV.Size = new System.Drawing.Size(210, 22);
             this.dtpkNgaySinh_NV.TabIndex = 14;
@@ -350,7 +366,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 138);
+            this.label3.Location = new System.Drawing.Point(30, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 9;
@@ -359,7 +375,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 242);
+            this.label5.Location = new System.Drawing.Point(30, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 13;
@@ -367,7 +383,7 @@
             // 
             // txbDiaChi
             // 
-            this.txbDiaChi.Location = new System.Drawing.Point(26, 262);
+            this.txbDiaChi.Location = new System.Drawing.Point(30, 282);
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(210, 22);
             this.txbDiaChi.TabIndex = 12;
@@ -375,7 +391,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 190);
+            this.label4.Location = new System.Drawing.Point(30, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 11;
@@ -383,7 +399,7 @@
             // 
             // txbTen_NV
             // 
-            this.txbTen_NV.Location = new System.Drawing.Point(26, 158);
+            this.txbTen_NV.Location = new System.Drawing.Point(30, 178);
             this.txbTen_NV.Name = "txbTen_NV";
             this.txbTen_NV.Size = new System.Drawing.Size(210, 22);
             this.txbTen_NV.TabIndex = 8;
@@ -391,7 +407,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 104);
+            this.comboBox1.Location = new System.Drawing.Point(30, 124);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 24);
             this.comboBox1.TabIndex = 7;
@@ -399,7 +415,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 84);
+            this.label2.Location = new System.Drawing.Point(30, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 6;
@@ -408,7 +424,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 32);
+            this.label1.Location = new System.Drawing.Point(30, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 4;
@@ -440,7 +456,7 @@
             // 
             // txbMaNhanVien
             // 
-            this.txbMaNhanVien.Location = new System.Drawing.Point(26, 52);
+            this.txbMaNhanVien.Location = new System.Drawing.Point(30, 72);
             this.txbMaNhanVien.Name = "txbMaNhanVien";
             this.txbMaNhanVien.Size = new System.Drawing.Size(210, 22);
             this.txbMaNhanVien.TabIndex = 0;
@@ -449,32 +465,15 @@
             // 
             this.radioButton_auto.AutoSize = true;
             this.radioButton_auto.Checked = true;
-            this.radioButton_auto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_auto.Location = new System.Drawing.Point(114, 17);
+            this.radioButton_auto.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radioButton_auto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_auto.Location = new System.Drawing.Point(67, 26);
             this.radioButton_auto.Name = "radioButton_auto";
-            this.radioButton_auto.Size = new System.Drawing.Size(151, 17);
-            this.radioButton_auto.TabIndex = 24;
-            this.radioButton_auto.TabStop = true;
+            this.radioButton_auto.Size = new System.Drawing.Size(184, 20);
+            this.radioButton_auto.TabIndex = 28;
             this.radioButton_auto.Text = "Tự động tạo mã nhân viên";
             this.radioButton_auto.UseVisualStyleBackColor = true;
             this.radioButton_auto.CheckedChanged += new System.EventHandler(this.radioButton_auto_CheckedChanged);
-            this.radioButton_auto.Click += new System.EventHandler(this.radioButton_auto_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 514);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 17);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Mật khẩu:";
-            // 
-            // textBox_mk
-            // 
-            this.textBox_mk.Location = new System.Drawing.Point(29, 534);
-            this.textBox_mk.Name = "textBox_mk";
-            this.textBox_mk.Size = new System.Drawing.Size(210, 22);
-            this.textBox_mk.TabIndex = 27;
             // 
             // fQuanLyNhanVien
             // 
@@ -539,8 +538,8 @@
         private System.Windows.Forms.RadioButton rbtnNu;
         private System.Windows.Forms.RadioButton rbtnNam;
         private System.Windows.Forms.Label label_gt;
-        private System.Windows.Forms.RadioButton radioButton_auto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox_mk;
+        private System.Windows.Forms.CheckBox radioButton_auto;
     }
 }

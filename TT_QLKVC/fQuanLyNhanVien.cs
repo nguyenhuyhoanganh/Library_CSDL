@@ -249,13 +249,13 @@ namespace TT_QLKVC
             groupBox4.ForeColor = Color.Green;
             button6.ForeColor = groupBox4.ForeColor;
             readmode();
-            /*
+            
             using (SqlConnection sqlcon = new SqlConnection(constr))
             {
                 sqlcon.Open();
                 SqlCommand command = new SqlCommand("exec auto_manv", sqlcon);
                 txbMaNhanVien.Text = command.ExecuteScalar().ToString(); 
-            }*/
+            }
                 txbDiaChi.Text = "";
             txbLuong_NV.Text = "";
             //txbMaNhanVien.Text = "";
