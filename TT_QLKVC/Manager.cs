@@ -43,6 +43,7 @@ namespace TT_QLKVC
             customizeDesing();
             statusSub();
             showStatus(btnStatus1);
+            openForm(new fBanVe());
         }
 
         private void openForm(Form form)
@@ -140,9 +141,10 @@ namespace TT_QLKVC
         {
             DisableButton();
             DisableSubButton();
-            lbTillerBar.Text = "Menu";
-            if (activeForm != null)
-                activeForm.Close();
+            lbTillerBar.Text = "Home";
+            //if (activeForm != null)
+            //activeForm.Close();
+            openForm(new fBanVe());
         }
 
         #endregion

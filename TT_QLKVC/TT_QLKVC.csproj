@@ -59,6 +59,12 @@
   <ItemGroup>
     <Compile Include="CColor.cs" />
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="fBanVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBanVe.Designer.cs">
+      <DependentUpon>fBanVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fBanVe.resx">
+      <DependentUpon>fBanVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBaoCaoDoanhThu.resx">
       <DependentUpon>fBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>

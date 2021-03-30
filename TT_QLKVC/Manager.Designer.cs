@@ -72,9 +72,9 @@
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -594,9 +594,9 @@
             this.lbTillerBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.lbTillerBar.Location = new System.Drawing.Point(65, 57);
             this.lbTillerBar.Name = "lbTillerBar";
-            this.lbTillerBar.Size = new System.Drawing.Size(43, 17);
+            this.lbTillerBar.Size = new System.Drawing.Size(45, 17);
             this.lbTillerBar.TabIndex = 6;
-            this.lbTillerBar.Text = "Menu";
+            this.lbTillerBar.Text = "Home";
             // 
             // btnStatus3
             // 
@@ -720,15 +720,6 @@
             this.panelForm.Size = new System.Drawing.Size(972, 653);
             this.panelForm.TabIndex = 2;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(972, 1);
-            this.panel4.TabIndex = 0;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -743,6 +734,15 @@
     "n, Chạy Mất Dép\r\nĐm các bạn luôn, làm gd mệt vl, ai thương làm hộ chức năng luôn" +
     " đi\r\n\r\n\r\n";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(972, 1);
+            this.panel4.TabIndex = 0;
             // 
             // Manager
             // 
