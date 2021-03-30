@@ -54,7 +54,7 @@ go
 
 --themNV: Thêm nhân viên v
 create or alter proc themNV
-@MANV nchar(10),@TENNV nvarchar(50),@NGAYSINH date, @SDT nchar(10), @GIOITINH 	nchar(3),@LUONG money,@MATKHAU nvarchar(20),@MAKHU nchar(10),@DIACHI nvarchar(50)
+@MANV nchar(10),@TENNV nvarchar(50),@NGAYSINH date, @SDT nchar(10), @GIOITINH 	nchar(3),@LUONG money,@chucvu nvarchar(20),@MAKHU nchar(10),@DIACHI nvarchar(50), @MATKHAU NCHAR(20)
 as begin 
 if(select COUNT(*)from NHANVIEN where MANV =@MANV)>0
 begin
@@ -63,8 +63,8 @@ end
 else
 begin
 insert  into dbo.NHANVIEN(MANV,TENNV,NGAYSINH,SDT,GIOITINH,LUONG,MAKHU,DIACHI,
-MATKHAU)
-values(@MANV,@TENNV,@NGAYSINH, @SDT, @GIOITINH,@LUONG,@MAKHU,@DIACHI,@MATKHAU)
+MATKHAU, chucvu)
+values(@MANV,@TENNV,@NGAYSINH, @SDT, @GIOITINH,@LUONG,@MAKHU,@DIACHI,@MATKHAU, @chucvu)
 print(N'Đã thêm nhân viên thành công')
 end
 end
