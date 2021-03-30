@@ -142,14 +142,16 @@ namespace TT_QLKVC
 
         private void fQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            groupBox3.Text = "Thông tin nhân viên";
             readmode();
+            groupBox3.Text = "Thông tin nhân viên";
+            //readmode();
             comboBox1_Index();
             label_gt.Visible = false;
             //label_gt.Visible = false;
             rbtnNu.Visible = false;
             rbtnNam.Visible = false;
             load();
+            label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
         }
 
 
@@ -158,6 +160,7 @@ namespace TT_QLKVC
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             groupBox3.Text = "Thông tin nhân viên";
             groupBox3.ForeColor = Color.Black;
             groupBox4.ForeColor = groupBox3.ForeColor;
@@ -173,6 +176,7 @@ namespace TT_QLKVC
         {
             if (groupBox3.Text == "Thông tin nhân viên" || groupBox3.Text == "")
             {
+                txbMaNhanVien.ReadOnly = true;
                 txbDiaChi.ReadOnly = true;
                 txbDiaChi.BackColor = Color.White;
                 txbLuong_NV.ReadOnly = true;
@@ -239,6 +243,7 @@ namespace TT_QLKVC
 
         private void button3_Click(object sender, EventArgs e)
         {
+            label11.Visible=true;radioButton_auto.Visible=true;textBox_mk.Visible = true;
             groupBox3.Text = "Thêm nhân viên";
             groupBox3.ForeColor = Color.Green;
             groupBox4.ForeColor = Color.Green;
@@ -266,6 +271,7 @@ namespace TT_QLKVC
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             groupBox3.Text = "Sửa thông tin nhân viên";
             groupBox3.ForeColor = Color.Orange;
             groupBox4.ForeColor = groupBox3.ForeColor;
@@ -374,6 +380,7 @@ namespace TT_QLKVC
             //    aTimer.button6.BackColor = Color.Red;
             //    button6.BackColor = Color.Red;
             //}    
+            label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             groupBox3.Text = "Xóa thông tin nhân viên";
             groupBox3.ForeColor = Color.Red;
             groupBox4.ForeColor = groupBox3.ForeColor;
@@ -382,6 +389,32 @@ namespace TT_QLKVC
             rbtnNu.Visible = true;
             rbtnNam.Visible = true;
             readmode();
+        }
+
+        private void radioButton_auto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_auto.Checked == true)
+                using (SqlConnection sqlcon = new SqlConnection(constr))
+                {
+                    sqlcon.Open();
+                    SqlCommand command = new SqlCommand("exec auto_manv", sqlcon);
+                    txbMaNhanVien.Text = command.ExecuteScalar().ToString();
+                }
+            else
+                txbMaNhanVien.Text = "";
+        }
+
+        private void radioButton_auto_Click(object sender, EventArgs e)
+        {
+            if (radioButton_auto.Checked == true)
+                radioButton_auto.Checked = false;
+            else if(radioButton_auto.Checked == false)
+                radioButton_auto.Checked = true;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void fQuanLyNhanVien_Load_1(object sender, EventArgs e)

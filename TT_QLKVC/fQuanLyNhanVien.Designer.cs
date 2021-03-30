@@ -44,6 +44,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label_gt = new System.Windows.Forms.Label();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
             this.rbtnNam = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +65,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.txbMaNhanVien = new System.Windows.Forms.TextBox();
-            this.label_gt = new System.Windows.Forms.Label();
+            this.radioButton_auto = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox_mk = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,6 +89,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhân Viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button4
             // 
@@ -207,6 +211,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox_mk);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.radioButton_auto);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.comboBox_cv);
@@ -243,6 +250,18 @@
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giới tính";
+            // 
+            // label_gt
+            // 
+            this.label_gt.AutoSize = true;
+            this.label_gt.BackColor = System.Drawing.SystemColors.Control;
+            this.label_gt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_gt.Location = new System.Drawing.Point(71, 21);
+            this.label_gt.Name = "label_gt";
+            this.label_gt.Size = new System.Drawing.Size(75, 25);
+            this.label_gt.TabIndex = 24;
+            this.label_gt.Text = "label12";
+            this.label_gt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rbtnNu
             // 
@@ -399,7 +418,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Window;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(151, 581);
+            this.button7.Location = new System.Drawing.Point(151, 584);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(85, 35);
             this.button7.TabIndex = 3;
@@ -411,7 +430,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.Window;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(33, 581);
+            this.button6.Location = new System.Drawing.Point(33, 584);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 35);
             this.button6.TabIndex = 2;
@@ -426,17 +445,36 @@
             this.txbMaNhanVien.Size = new System.Drawing.Size(210, 22);
             this.txbMaNhanVien.TabIndex = 0;
             // 
-            // label_gt
+            // radioButton_auto
             // 
-            this.label_gt.AutoSize = true;
-            this.label_gt.BackColor = System.Drawing.SystemColors.Control;
-            this.label_gt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_gt.Location = new System.Drawing.Point(71, 21);
-            this.label_gt.Name = "label_gt";
-            this.label_gt.Size = new System.Drawing.Size(75, 25);
-            this.label_gt.TabIndex = 24;
-            this.label_gt.Text = "label12";
-            this.label_gt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton_auto.AutoSize = true;
+            this.radioButton_auto.Checked = true;
+            this.radioButton_auto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_auto.Location = new System.Drawing.Point(114, 17);
+            this.radioButton_auto.Name = "radioButton_auto";
+            this.radioButton_auto.Size = new System.Drawing.Size(151, 17);
+            this.radioButton_auto.TabIndex = 24;
+            this.radioButton_auto.TabStop = true;
+            this.radioButton_auto.Text = "Tự động tạo mã nhân viên";
+            this.radioButton_auto.UseVisualStyleBackColor = true;
+            this.radioButton_auto.CheckedChanged += new System.EventHandler(this.radioButton_auto_CheckedChanged);
+            this.radioButton_auto.Click += new System.EventHandler(this.radioButton_auto_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(29, 514);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Mật khẩu:";
+            // 
+            // textBox_mk
+            // 
+            this.textBox_mk.Location = new System.Drawing.Point(29, 534);
+            this.textBox_mk.Name = "textBox_mk";
+            this.textBox_mk.Size = new System.Drawing.Size(210, 22);
+            this.textBox_mk.TabIndex = 27;
             // 
             // fQuanLyNhanVien
             // 
@@ -501,5 +539,8 @@
         private System.Windows.Forms.RadioButton rbtnNu;
         private System.Windows.Forms.RadioButton rbtnNam;
         private System.Windows.Forms.Label label_gt;
+        private System.Windows.Forms.RadioButton radioButton_auto;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox_mk;
     }
 }
