@@ -152,6 +152,7 @@ namespace TT_QLKVC
             rbtnNam.Visible = false;
             load();
             label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
+            txbTen_NV.ReadOnly=true;
         }
 
 
@@ -231,6 +232,11 @@ namespace TT_QLKVC
 
         private void button7_Click(object sender, EventArgs e)
         {
+            clear();
+        }
+
+        void clear()
+        {
             txbDiaChi.Text = "";
             txbLuong_NV.Text = "";
             txbMaNhanVien.Text = "";
@@ -239,6 +245,7 @@ namespace TT_QLKVC
             dtpkNgaySinh_NV.Value = DateTime.Today;
             rbtnNam.Checked = true;
             rbtnNu.Checked = false;
+            textBox_mk.Text = "";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -249,7 +256,7 @@ namespace TT_QLKVC
             groupBox4.ForeColor = Color.Green;
             button6.ForeColor = groupBox4.ForeColor;
             readmode();
-            
+            txbMaNhanVien.ReadOnly = true;
             using (SqlConnection sqlcon = new SqlConnection(constr))
             {
                 sqlcon.Open();
@@ -272,6 +279,7 @@ namespace TT_QLKVC
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txbTen_NV.ReadOnly = false;
             label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             groupBox3.Text = "Sửa thông tin nhân viên";
             groupBox3.ForeColor = Color.Orange;
@@ -304,6 +312,7 @@ namespace TT_QLKVC
                             sqlcon.InfoMessage += new SqlInfoMessageEventHandler(InfoMessageHandler);
                             command.ExecuteNonQuery();
                         }
+                        clear();
                         load();
                     }
                 }
@@ -336,6 +345,7 @@ namespace TT_QLKVC
                             command.ExecuteNonQuery();
                         }
                     }
+                    clear();
                     load();
                 }
             }
@@ -349,19 +359,23 @@ namespace TT_QLKVC
                 }
                 else if (Regex.IsMatch(txbLuong_NV.Text, "\\d") == false)
                     MessageBox.Show("Lương nhân viên phải là số tự nhiên lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //else if(Regex.IsMatch(txbTen_NV.Text,"\\D")== true)
-                //    MessageBox.Show("Tên nhân viên không thể có ký tự nằm ngoài a-z hoặc A-Z", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if(Regex.IsMatch(txbTen_NV.Text,"\\d")== true)
+                    MessageBox.Show("Tên nhân viên không thể có ký tự nằm ngoài a-z hoặc A-Z", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else if (Regex.IsMatch(txbSD_NV.Text, "\\d") == false || txbSD_NV.Text.Length < 10)
                     MessageBox.Show("Số điện thoại chưa chính xác", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if(textBox_mk.Text=="")
+                    MessageBox.Show("Chưa có mật khẩu cho nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     using (SqlConnection sqlcon = new SqlConnection(constr))
                     {
                         sqlcon.Open();
-                        SqlCommand command = new SqlCommand("execute themnv N'" + txbMaNhanVien.Text + "', N'" + txbTen_NV.Text + "', '" + dtpkNgaySinh_NV.Value + "', N'" + txbSD_NV.Text + "', N'" + gioitinh + "', N'" + txbLuong_NV.Text + "', N'" + comboBox_cv.Text + "', N'" + comboBox1.Text + "', N'" + txbDiaChi.Text + "'", sqlcon);
+                        SqlCommand command = new SqlCommand("execute themnv N'" + txbMaNhanVien.Text + "', N'" + txbTen_NV.Text + "', '" + dtpkNgaySinh_NV.Value + "', N'" + txbSD_NV.Text + "', N'" + gioitinh + "', N'" + txbLuong_NV.Text + "', N'" + comboBox_cv.Text + "', N'" + comboBox1.Text + "', N'" + txbDiaChi.Text + "',N'"+textBox_mk.Text+"'", sqlcon);
                         sqlcon.InfoMessage += new SqlInfoMessageEventHandler(InfoMessageHandler);
                         command.ExecuteNonQuery();
                     }
+                    textBox_mk.Text = "";
+                    clear();
                     load();
                 }
             }
@@ -381,6 +395,7 @@ namespace TT_QLKVC
             //    aTimer.button6.BackColor = Color.Red;
             //    button6.BackColor = Color.Red;
             //}    
+            txbMaNhanVien.ReadOnly = false;
             label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             groupBox3.Text = "Xóa thông tin nhân viên";
             groupBox3.ForeColor = Color.Red;
@@ -395,14 +410,19 @@ namespace TT_QLKVC
         private void radioButton_auto_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton_auto.Checked == true)
+            {
                 using (SqlConnection sqlcon = new SqlConnection(constr))
                 {
                     sqlcon.Open();
                     SqlCommand command = new SqlCommand("exec auto_manv", sqlcon);
                     txbMaNhanVien.Text = command.ExecuteScalar().ToString();
                 }
-            else if(radioButton_auto.Checked == false)
-                txbMaNhanVien.Text = "";
+                txbMaNhanVien.ReadOnly = true;
+            }
+            else if (radioButton_auto.Checked == false)
+            {       txbMaNhanVien.Text = "";
+                txbMaNhanVien.ReadOnly = false;
+        }
         }
 
         private void radioButton_auto_Click(object sender, EventArgs e)
