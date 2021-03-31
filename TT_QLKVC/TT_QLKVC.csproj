@@ -113,6 +113,12 @@
     <Compile Include="fQuanLyVe.Designer.cs">
       <DependentUpon>fQuanLyVe.cs</DependentUpon>
     </Compile>
+    <Compile Include="fThanhToanDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThanhToanDichVu.Designer.cs">
+      <DependentUpon>fThanhToanDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThanhToanHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyVe.resx">
       <DependentUpon>fQuanLyVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThanhToanDichVu.resx">
+      <DependentUpon>fThanhToanDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThanhToanHoaDon.resx">
       <DependentUpon>fThanhToanHoaDon.cs</DependentUpon>
