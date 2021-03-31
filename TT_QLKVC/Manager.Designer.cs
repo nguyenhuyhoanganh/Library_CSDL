@@ -51,7 +51,6 @@
             this.btnQLDichVu = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLLoaiDichVu = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLKhu = new Guna.UI2.WinForms.Guna2Button();
-            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -75,6 +74,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -315,12 +315,12 @@
             // 
             // panelSubQuanLy
             // 
+            this.panelSubQuanLy.Controls.Add(this.btnQLNhanVien);
             this.panelSubQuanLy.Controls.Add(this.btnQuanLyVe);
             this.panelSubQuanLy.Controls.Add(this.btnQLTroChoi);
             this.panelSubQuanLy.Controls.Add(this.btnQLDichVu);
             this.panelSubQuanLy.Controls.Add(this.btnQLLoaiDichVu);
             this.panelSubQuanLy.Controls.Add(this.btnQLKhu);
-            this.panelSubQuanLy.Controls.Add(this.btnQLNhanVien);
             this.panelSubQuanLy.Controls.Add(this.panel9);
             this.panelSubQuanLy.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubQuanLy.Location = new System.Drawing.Point(7, 92);
@@ -338,7 +338,7 @@
             this.btnQuanLyVe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQuanLyVe.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyVe.HoverState.Parent = this.btnQuanLyVe;
-            this.btnQuanLyVe.Location = new System.Drawing.Point(0, 226);
+            this.btnQuanLyVe.Location = new System.Drawing.Point(0, 181);
             this.btnQuanLyVe.Name = "btnQuanLyVe";
             this.btnQuanLyVe.ShadowDecoration.Parent = this.btnQuanLyVe;
             this.btnQuanLyVe.Size = new System.Drawing.Size(196, 45);
@@ -356,7 +356,7 @@
             this.btnQLTroChoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQLTroChoi.ForeColor = System.Drawing.Color.White;
             this.btnQLTroChoi.HoverState.Parent = this.btnQLTroChoi;
-            this.btnQLTroChoi.Location = new System.Drawing.Point(0, 181);
+            this.btnQLTroChoi.Location = new System.Drawing.Point(0, 136);
             this.btnQLTroChoi.Name = "btnQLTroChoi";
             this.btnQLTroChoi.ShadowDecoration.Parent = this.btnQLTroChoi;
             this.btnQLTroChoi.Size = new System.Drawing.Size(196, 45);
@@ -374,7 +374,7 @@
             this.btnQLDichVu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQLDichVu.ForeColor = System.Drawing.Color.White;
             this.btnQLDichVu.HoverState.Parent = this.btnQLDichVu;
-            this.btnQLDichVu.Location = new System.Drawing.Point(0, 136);
+            this.btnQLDichVu.Location = new System.Drawing.Point(0, 91);
             this.btnQLDichVu.Name = "btnQLDichVu";
             this.btnQLDichVu.ShadowDecoration.Parent = this.btnQLDichVu;
             this.btnQLDichVu.Size = new System.Drawing.Size(196, 45);
@@ -392,7 +392,7 @@
             this.btnQLLoaiDichVu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQLLoaiDichVu.ForeColor = System.Drawing.Color.White;
             this.btnQLLoaiDichVu.HoverState.Parent = this.btnQLLoaiDichVu;
-            this.btnQLLoaiDichVu.Location = new System.Drawing.Point(0, 91);
+            this.btnQLLoaiDichVu.Location = new System.Drawing.Point(0, 46);
             this.btnQLLoaiDichVu.Name = "btnQLLoaiDichVu";
             this.btnQLLoaiDichVu.ShadowDecoration.Parent = this.btnQLLoaiDichVu;
             this.btnQLLoaiDichVu.Size = new System.Drawing.Size(196, 45);
@@ -410,31 +410,13 @@
             this.btnQLKhu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQLKhu.ForeColor = System.Drawing.Color.White;
             this.btnQLKhu.HoverState.Parent = this.btnQLKhu;
-            this.btnQLKhu.Location = new System.Drawing.Point(0, 46);
+            this.btnQLKhu.Location = new System.Drawing.Point(0, 1);
             this.btnQLKhu.Name = "btnQLKhu";
             this.btnQLKhu.ShadowDecoration.Parent = this.btnQLKhu;
             this.btnQLKhu.Size = new System.Drawing.Size(196, 45);
             this.btnQLKhu.TabIndex = 8;
             this.btnQLKhu.Text = "Khu Vui Chơi";
             this.btnQLKhu.Click += new System.EventHandler(this.btnQLKhu_Click);
-            // 
-            // btnQLNhanVien
-            // 
-            this.btnQLNhanVien.BorderRadius = 8;
-            this.btnQLNhanVien.CheckedState.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.CustomImages.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnQLNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnQLNhanVien.HoverState.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 1);
-            this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.ShadowDecoration.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Size = new System.Drawing.Size(196, 45);
-            this.btnQLNhanVien.TabIndex = 7;
-            this.btnQLNhanVien.Text = "Nhân Viên";
-            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // panel9
             // 
@@ -744,6 +726,24 @@
             this.panel4.Size = new System.Drawing.Size(972, 1);
             this.panel4.TabIndex = 0;
             // 
+            // btnQLNhanVien
+            // 
+            this.btnQLNhanVien.BorderRadius = 8;
+            this.btnQLNhanVien.CheckedState.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.CustomImages.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnQLNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnQLNhanVien.HoverState.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 226);
+            this.btnQLNhanVien.Name = "btnQLNhanVien";
+            this.btnQLNhanVien.ShadowDecoration.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Size = new System.Drawing.Size(196, 45);
+            this.btnQLNhanVien.TabIndex = 13;
+            this.btnQLNhanVien.Text = "Nhân Viên";
+            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -789,7 +789,6 @@
         private Guna.UI2.WinForms.Guna2Button btnQLDichVu;
         private Guna.UI2.WinForms.Guna2Button btnQLLoaiDichVu;
         private Guna.UI2.WinForms.Guna2Button btnQLKhu;
-        private Guna.UI2.WinForms.Guna2Button btnQLNhanVien;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI2.WinForms.Guna2Button btnQuanLy;
         private System.Windows.Forms.Panel panel8;
@@ -819,6 +818,7 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2Button btnQLNhanVien;
     }
 }
 

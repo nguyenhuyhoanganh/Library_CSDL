@@ -207,6 +207,7 @@ namespace TT_QLKVC
                 quanLy = 1;
                 showStatus(btnStatus2);
                 ActivateButton(sender);
+                btnQLKhu_Click(sender, e);
             }//Đang đóng
             else
             {
@@ -269,7 +270,7 @@ namespace TT_QLKVC
 
                 showStatus(btnStatus3);
                 ActivateButton(sender);
-
+                btnBCDoanhThu_Click(sender, e);
             }//Đang đóng
             else
             {
@@ -308,7 +309,7 @@ namespace TT_QLKVC
 
                 showStatus(btnStatus4);
                 ActivateButton(sender);
-                
+                btnTTHoaDon_Click(sender, e);
             }
             else
             {
