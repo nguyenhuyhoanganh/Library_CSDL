@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="CColor.cs" />
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="fBanVe.cs">
       <SubType>Form</SubType>
     </Compile>
