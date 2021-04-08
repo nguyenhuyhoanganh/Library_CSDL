@@ -352,6 +352,10 @@ namespace TT_QLKVC
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            thanhToan = 0;
+            quanLy = 0;
+            baoCao = 0;
+            thongTinTaiKhoan = 0;
             showStatus(btnStatus1);
             Reset();
             hideSubMenu();

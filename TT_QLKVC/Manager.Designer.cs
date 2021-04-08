@@ -46,6 +46,7 @@
             this.btnBaoCao = new Guna.UI2.WinForms.Guna2Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panelSubQuanLy = new System.Windows.Forms.Panel();
+            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyVe = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLTroChoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLDichVu = new Guna.UI2.WinForms.Guna2Button();
@@ -70,11 +71,9 @@
             this.btnStatus1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.panelForm = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -327,6 +326,24 @@
             this.panelSubQuanLy.Name = "panelSubQuanLy";
             this.panelSubQuanLy.Size = new System.Drawing.Size(196, 280);
             this.panelSubQuanLy.TabIndex = 7;
+            // 
+            // btnQLNhanVien
+            // 
+            this.btnQLNhanVien.BorderRadius = 8;
+            this.btnQLNhanVien.CheckedState.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.CustomImages.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnQLNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnQLNhanVien.HoverState.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 226);
+            this.btnQLNhanVien.Name = "btnQLNhanVien";
+            this.btnQLNhanVien.ShadowDecoration.Parent = this.btnQLNhanVien;
+            this.btnQLNhanVien.Size = new System.Drawing.Size(196, 45);
+            this.btnQLNhanVien.TabIndex = 13;
+            this.btnQLNhanVien.Text = "Nhân Viên";
+            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // btnQuanLyVe
             // 
@@ -692,31 +709,6 @@
             this.btnExit.TabIndex = 0;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panelForm
-            // 
-            this.panelForm.Controls.Add(this.textBox1);
-            this.panelForm.Controls.Add(this.panel4);
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(210, 100);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(972, 653);
-            this.panelForm.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(99, 139);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(749, 289);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Phần Mềm Quản Lý Khu Vui Chơi\r\nAnh em có ý tưởng gì về nền không???\r\nThằng Lồn Sơ" +
-    "n, Chạy Mất Dép\r\nĐm các bạn luôn, làm gd mệt vl, ai thương làm hộ chức năng luôn" +
-    " đi\r\n\r\n\r\n";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
@@ -726,23 +718,14 @@
             this.panel4.Size = new System.Drawing.Size(972, 1);
             this.panel4.TabIndex = 0;
             // 
-            // btnQLNhanVien
+            // panelForm
             // 
-            this.btnQLNhanVien.BorderRadius = 8;
-            this.btnQLNhanVien.CheckedState.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.CustomImages.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnQLNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnQLNhanVien.HoverState.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 226);
-            this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.ShadowDecoration.Parent = this.btnQLNhanVien;
-            this.btnQLNhanVien.Size = new System.Drawing.Size(196, 45);
-            this.btnQLNhanVien.TabIndex = 13;
-            this.btnQLNhanVien.Text = "Nhân Viên";
-            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
+            this.panelForm.Controls.Add(this.panel4);
+            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelForm.Location = new System.Drawing.Point(210, 100);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(972, 653);
+            this.panelForm.TabIndex = 2;
             // 
             // Manager
             // 
@@ -766,7 +749,6 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelForm.ResumeLayout(false);
-            this.panelForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -814,11 +796,10 @@
         private System.Windows.Forms.Label lbTillerBar;
         private Guna.UI2.WinForms.Guna2Button btnStatus5;
         private Guna.UI2.WinForms.Guna2Button btnSignOut;
-        private System.Windows.Forms.Panel panelForm;
-        private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private System.Windows.Forms.TextBox textBox1;
         private Guna.UI2.WinForms.Guna2Button btnQLNhanVien;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelForm;
     }
 }
 
