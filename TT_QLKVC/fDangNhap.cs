@@ -58,7 +58,7 @@ namespace TT_QLKVC
                 using (SqlConnection connec = new SqlConnection(ConnectionString.str))
                 {
                     connec.Open();
-                    string query = "select *  from NHANVIEN where MANV = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
+                    string query = "select *  from NHANVIEN where MANV = N'" + txbUsername.Text + "'";
                     SqlCommand com = new SqlCommand(query, connec);
                     SqlDataAdapter adapter = new SqlDataAdapter(com);
                     connec.Close();

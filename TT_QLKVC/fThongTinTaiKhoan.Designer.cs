@@ -48,9 +48,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -229,6 +229,7 @@
             this.btnTimKiemNV.TabStop = false;
             this.btnTimKiemNV.Text = "Đổi Mật Khẩu";
             this.btnTimKiemNV.UseVisualStyleBackColor = false;
+            this.btnTimKiemNV.Click += new System.EventHandler(this.btnTimKiemNV_Click);
             // 
             // button1
             // 
@@ -282,28 +283,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản";
             // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.Window;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Location = new System.Drawing.Point(473, 409);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(77, 33);
-            this.btnLuu.TabIndex = 57;
-            this.btnLuu.TabStop = false;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rbtnNam_TK);
-            this.panel1.Controls.Add(this.rbtnNu_TK);
-            this.panel1.Location = new System.Drawing.Point(471, 253);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 28);
-            this.panel1.TabIndex = 58;
-            // 
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.Window;
@@ -316,6 +295,28 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbtnNam_TK);
+            this.panel1.Controls.Add(this.rbtnNu_TK);
+            this.panel1.Location = new System.Drawing.Point(471, 253);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 28);
+            this.panel1.TabIndex = 58;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Location = new System.Drawing.Point(473, 409);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(77, 33);
+            this.btnLuu.TabIndex = 57;
+            this.btnLuu.TabStop = false;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // fThongTinTaiKhoan
             // 

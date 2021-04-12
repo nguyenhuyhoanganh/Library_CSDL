@@ -44,7 +44,7 @@ namespace TT_QLKVC
             customizeDesing();
             statusSub();
             showStatus(btnStatus1);
-            openForm(new fBanVe());
+            
 
         }
 
@@ -146,7 +146,9 @@ namespace TT_QLKVC
             lbTillerBar.Text = "Home";
             //if (activeForm != null)
             //activeForm.Close();
-            openForm(new fBanVe());
+            fBanVe f = new fBanVe();
+            f.data = data;
+            openForm(f);
         }
 
         #endregion
@@ -375,6 +377,9 @@ namespace TT_QLKVC
         private void Manager_Load(object sender, EventArgs e)
         {
             btnTaiKhoan.Text = data.Rows[0]["TENNV"].ToString();
+            fBanVe f = new fBanVe();
+            f.data = data;
+            openForm(f);
         }
     }
 

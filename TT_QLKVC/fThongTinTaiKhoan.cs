@@ -113,5 +113,12 @@ namespace TT_QLKVC
         {
             fThongTinTaiKhoan_Load(sender, e);
         }
+
+        private void btnTimKiemNV_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau();
+            f.a = dt.Rows[0]["MANV"].ToString();
+            f.Show();
+        }
     }
 }

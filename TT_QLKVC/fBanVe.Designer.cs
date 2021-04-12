@@ -46,7 +46,7 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbTong = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbKhu = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbKhu);
             this.groupBox2.Controls.Add(this.panel11);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.panel8);
@@ -218,7 +220,7 @@
             this.panel1.Controls.Add(this.numericUpDown3);
             this.panel1.Controls.Add(this.numericUpDown4);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txbTong);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label13);
@@ -247,6 +249,7 @@
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(210, 30);
             this.numericUpDown3.TabIndex = 51;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
             // numericUpDown4
             // 
@@ -254,6 +257,7 @@
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(210, 30);
             this.numericUpDown4.TabIndex = 50;
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
             // label10
             // 
@@ -264,12 +268,12 @@
             this.label10.TabIndex = 48;
             this.label10.Text = "Tổng Tiền:";
             // 
-            // textBox2
+            // txbTong
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 232);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 30);
-            this.textBox2.TabIndex = 47;
+            this.txbTong.Location = new System.Drawing.Point(180, 232);
+            this.txbTong.Name = "txbTong";
+            this.txbTong.Size = new System.Drawing.Size(210, 30);
+            this.txbTong.TabIndex = 47;
             // 
             // label11
             // 
@@ -385,6 +389,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ngày:";
             // 
+            // cbKhu
+            // 
+            this.cbKhu.BackColor = System.Drawing.SystemColors.Window;
+            this.cbKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhu.FormattingEnabled = true;
+            this.cbKhu.Location = new System.Drawing.Point(134, 173);
+            this.cbKhu.Name = "cbKhu";
+            this.cbKhu.Size = new System.Drawing.Size(244, 24);
+            this.cbKhu.TabIndex = 47;
+            this.cbKhu.SelectedIndexChanged += new System.EventHandler(this.cbKhu_SelectedIndexChanged);
+            // 
             // fBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,6 +408,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "fBanVe";
             this.Text = "fBanVe";
+            this.Load += new System.EventHandler(this.fBanVe_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -423,7 +439,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbTong;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label13;
@@ -444,5 +460,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbKhu;
     }
 }
