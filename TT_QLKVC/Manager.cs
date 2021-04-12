@@ -16,6 +16,7 @@ namespace TT_QLKVC
 
     public partial class Manager : Form
     {
+        public DataTable data;
         private Form activeForm = new Form();//Form đang dùng
 
         private Guna2Button currentBtn;//btuton đang ấn
@@ -44,6 +45,7 @@ namespace TT_QLKVC
             statusSub();
             showStatus(btnStatus1);
             openForm(new fBanVe());
+
         }
 
         private void openForm(Form form)
@@ -187,7 +189,9 @@ namespace TT_QLKVC
                 showStatus(btnStatus5);
                 ActivateButton(sender);
                 hideSubMenu();
-                openForm(new fThongTinTaiKhoan());
+                fThongTinTaiKhoan form = new fThongTinTaiKhoan();
+                form.dt = data;
+                openForm(form);
             }
             else
             {
@@ -365,9 +369,13 @@ namespace TT_QLKVC
         {
             this.Close();
         }
+
         #endregion
 
-
+        private void Manager_Load(object sender, EventArgs e)
+        {
+            btnTaiKhoan.Text = data.Rows[0]["TENNV"].ToString();
+        }
     }
 
 }

@@ -147,3 +147,4 @@ D:\Kì 2 năm 3\Thực tập CSDL\App\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.cspr
 D:\Kì 2 năm 3\Thực tập CSDL\App\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
 D:\Kì 2 năm 3\Thực tập CSDL\App\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.exe
 D:\Kì 2 năm 3\Thực tập CSDL\App\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
+C:\Users\huyho\OneDrive\Desktop\Nhosm Loonf\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDangNhap.resources

@@ -27,7 +27,7 @@ namespace TT_QLKVC.DAO
         private DataProvider() { }
 
         //private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
-        private string connectionString = @"Data Source=localhost;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
+        private string connectionString = ConnectionString.str;
 
         #region ExcuteQuery
         public DataTable ExecuteQuery(string query, object[] parameter = null)
@@ -92,12 +92,11 @@ namespace TT_QLKVC.DAO
                     }
                 }
                 //thực thi câu query chả về số dòng câu truy vấn thực hiện được
-                acceptedRows = -1;
                 try
                 {
                     acceptedRows = command.ExecuteNonQuery();
                 }
-                catch { }
+                catch { acceptedRows = 0; }
                 connection.Close();
             }
 

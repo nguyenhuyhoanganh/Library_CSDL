@@ -48,8 +48,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -71,6 +75,7 @@
             this.txbMaNV_TK.ReadOnly = true;
             this.txbMaNV_TK.Size = new System.Drawing.Size(198, 22);
             this.txbMaNV_TK.TabIndex = 39;
+            this.txbMaNV_TK.TabStop = false;
             // 
             // label1
             // 
@@ -83,11 +88,14 @@
             // 
             // txbMaKhu_TK
             // 
+            this.txbMaKhu_TK.BackColor = System.Drawing.SystemColors.Window;
             this.txbMaKhu_TK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txbMaKhu_TK.Location = new System.Drawing.Point(473, 181);
             this.txbMaKhu_TK.Name = "txbMaKhu_TK";
+            this.txbMaKhu_TK.ReadOnly = true;
             this.txbMaKhu_TK.Size = new System.Drawing.Size(198, 22);
             this.txbMaKhu_TK.TabIndex = 41;
+            this.txbMaKhu_TK.TabStop = false;
             // 
             // label3
             // 
@@ -100,11 +108,14 @@
             // 
             // txbHoTen_TK
             // 
+            this.txbHoTen_TK.BackColor = System.Drawing.SystemColors.Window;
             this.txbHoTen_TK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txbHoTen_TK.Location = new System.Drawing.Point(473, 218);
             this.txbHoTen_TK.Name = "txbHoTen_TK";
+            this.txbHoTen_TK.ReadOnly = true;
             this.txbHoTen_TK.Size = new System.Drawing.Size(198, 22);
             this.txbHoTen_TK.TabIndex = 42;
+            this.txbHoTen_TK.TabStop = false;
             // 
             // label4
             // 
@@ -126,11 +137,14 @@
             // 
             // txbSDT_TK
             // 
+            this.txbSDT_TK.BackColor = System.Drawing.SystemColors.Window;
             this.txbSDT_TK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txbSDT_TK.Location = new System.Drawing.Point(473, 329);
             this.txbSDT_TK.Name = "txbSDT_TK";
+            this.txbSDT_TK.ReadOnly = true;
             this.txbSDT_TK.Size = new System.Drawing.Size(198, 22);
             this.txbSDT_TK.TabIndex = 47;
+            this.txbSDT_TK.TabStop = false;
             // 
             // label6
             // 
@@ -143,11 +157,14 @@
             // 
             // txbDiaChi_TK
             // 
+            this.txbDiaChi_TK.BackColor = System.Drawing.SystemColors.Window;
             this.txbDiaChi_TK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txbDiaChi_TK.Location = new System.Drawing.Point(473, 366);
             this.txbDiaChi_TK.Name = "txbDiaChi_TK";
+            this.txbDiaChi_TK.ReadOnly = true;
             this.txbDiaChi_TK.Size = new System.Drawing.Size(198, 22);
             this.txbDiaChi_TK.TabIndex = 49;
+            this.txbDiaChi_TK.TabStop = false;
             // 
             // label7
             // 
@@ -170,6 +187,7 @@
             this.dtpkNgaySinh_TK.Name = "dtpkNgaySinh_TK";
             this.dtpkNgaySinh_TK.Size = new System.Drawing.Size(198, 22);
             this.dtpkNgaySinh_TK.TabIndex = 46;
+            this.dtpkNgaySinh_TK.TabStop = false;
             // 
             // label8
             // 
@@ -183,22 +201,20 @@
             // rbtnNam_TK
             // 
             this.rbtnNam_TK.AutoSize = true;
-            this.rbtnNam_TK.Location = new System.Drawing.Point(469, 256);
+            this.rbtnNam_TK.Location = new System.Drawing.Point(12, 3);
             this.rbtnNam_TK.Name = "rbtnNam_TK";
             this.rbtnNam_TK.Size = new System.Drawing.Size(58, 21);
             this.rbtnNam_TK.TabIndex = 43;
-            this.rbtnNam_TK.TabStop = true;
             this.rbtnNam_TK.Text = "Nam";
             this.rbtnNam_TK.UseVisualStyleBackColor = true;
             // 
             // rbtnNu_TK
             // 
             this.rbtnNu_TK.AutoSize = true;
-            this.rbtnNu_TK.Location = new System.Drawing.Point(567, 261);
+            this.rbtnNu_TK.Location = new System.Drawing.Point(76, 3);
             this.rbtnNu_TK.Name = "rbtnNu_TK";
             this.rbtnNu_TK.Size = new System.Drawing.Size(47, 21);
             this.rbtnNu_TK.TabIndex = 44;
-            this.rbtnNu_TK.TabStop = true;
             this.rbtnNu_TK.Text = "Nữ";
             this.rbtnNu_TK.UseVisualStyleBackColor = true;
             // 
@@ -210,6 +226,7 @@
             this.btnTimKiemNV.Name = "btnTimKiemNV";
             this.btnTimKiemNV.Size = new System.Drawing.Size(143, 46);
             this.btnTimKiemNV.TabIndex = 54;
+            this.btnTimKiemNV.TabStop = false;
             this.btnTimKiemNV.Text = "Đổi Mật Khẩu";
             this.btnTimKiemNV.UseVisualStyleBackColor = false;
             // 
@@ -221,8 +238,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 46);
             this.button1.TabIndex = 55;
+            this.button1.TabStop = false;
             this.button1.Text = "Sửa Thông Tin";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -235,11 +254,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHuy);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnTimKiemNV);
-            this.groupBox1.Controls.Add(this.rbtnNu_TK);
-            this.groupBox1.Controls.Add(this.rbtnNam_TK);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.dtpkNgaySinh_TK);
             this.groupBox1.Controls.Add(this.label7);
@@ -262,6 +282,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Location = new System.Drawing.Point(473, 409);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(77, 33);
+            this.btnLuu.TabIndex = 57;
+            this.btnLuu.TabStop = false;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbtnNam_TK);
+            this.panel1.Controls.Add(this.rbtnNu_TK);
+            this.panel1.Location = new System.Drawing.Point(471, 253);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 28);
+            this.panel1.TabIndex = 58;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.SystemColors.Window;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Location = new System.Drawing.Point(594, 409);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(77, 33);
+            this.btnHuy.TabIndex = 59;
+            this.btnHuy.TabStop = false;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // fThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,9 +325,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "fThongTinTaiKhoan";
             this.Text = "fThongTinTaiKhoan";
+            this.Load += new System.EventHandler(this.fThongTinTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,5 +357,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

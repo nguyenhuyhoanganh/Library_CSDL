@@ -194,9 +194,9 @@ namespace TT_QLKVC
 
         private void button5_Click(object sender, EventArgs e)
         {
-            DataTable rez=DataProvider.Instance.ExecuteQuery("Select Count(*) as sl from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%'");
+            //DataTable rez=DataProvider.Instance.ExecuteQuery("Select Count(*) as sl from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%'");
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery("exec timKiemTC @a , @b", new object[]{ textBox6.Text,comboBox2.Text});
-            MessageBox.Show("Có " + kq + " Kết quả");
+            //MessageBox.Show("Có " + kq + " Kết quả");
         }
     }
 }
