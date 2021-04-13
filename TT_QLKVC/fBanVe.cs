@@ -54,6 +54,8 @@ namespace TT_QLKVC
                 nl = Convert.ToDecimal(tb.Rows[0]["GIAVENL"]);
                 te = Convert.ToDecimal(tb.Rows[0]["GIAVETE"]);
             }
+
+            txbMaVe.Text = loadMV();
         }
 
         private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +74,55 @@ namespace TT_QLKVC
         {
             decimal tong = (decimal)numericUpDown4.Value * nl + (decimal)numericUpDown3.Value * te;
             txbTong.Text = tong.ToString();
+        }
+
+        private void btnXuatVe_Click(object sender, EventArgs e)
+        {
+
+            if(numericUpDown4.Value == 0 && numericUpDown3.Value == 0)
+            {
+                MessageBox.Show("Chưa Thêm Lượng Khách Vào Vé");
+                return;
+            }
+
+
+            string maNV = data.Rows[0]["MANV"].ToString();
+
+            string maKHU = data.Rows[0]["MAKHU"].ToString();
+            
+
+            string que = "select * from KHUVUICHOI where TENKHU = N'" + cbKhu.Text + "'";
+            DataTable tb = DataProvider.Instance.ExecuteQuery(que);
+
+            string gVNL = tb.Rows[0]["GIAVENL"].ToString();
+            string gVTE = tb.Rows[0]["GIAVETE"].ToString();
+
+            if (maKHU == "")
+            {
+
+                maKHU = tb.Rows[0]["MAKHU"].ToString();
+            }
+
+            string query = @"Insert into VE  (MAVE, SOLUONGNL, SOLUONGTE, MAKHU, MANV, TONGTIEN, NGAYBAN , GIAVENL, GIAVETE) values( N'" 
+            + txbMaVe.Text + "', '" + numericUpDown4.Value.ToString() + "', '"
+            + numericUpDown3.Value.ToString() + "', N'" + maKHU + "', N'" + maNV + "', "
+            + txbTong.Text + ", '" + DateTime.Now.ToString("MM/dd/yyyy") + "', " + gVNL + ", " + gVTE + ")";
+            int i = DataProvider.Instance.ExecuteNonQuery(query);
+            if (i != 0)
+            {
+                MessageBox.Show("Thêm vé Thành Công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm Vé Không Thành Công!!!");
+            }
+            fBanVe_Load(sender, e);
+        }
+
+        private string loadMV()
+        {
+            DataTable b = DataProvider.Instance.ExecuteQuery("select dbo.at_ma_ve() as N'Mã Vé'");
+            return b.Rows[0]["Mã Vé"].ToString();
         }
     }
 }
