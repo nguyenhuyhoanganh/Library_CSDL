@@ -7,6 +7,7 @@ alter table bienlai add trangthai NVARCHAR(50)--(đã thanh toán/chưa thanh to
 alter table bienlai add DONGIA money
 --select*from NHANVIEN
 --dangnhap: Đăng nhập vào chương trình quản lý
+go
 CREATE OR ALTER PROC dangNhap @MANV NCHAR(10), @MATKHAU NVARCHAR(20)
 AS
 BEGIN
@@ -118,10 +119,10 @@ begin
 end
 return @id
 end
-
+go
 alter table nhanvien
  add constraint automanv default dbo.auto_manv() for manv 
-
+ go
 --capNhatNV: Cập nhật lại lương của nhân viên của khu vui chơi
 create or alter proc capNhatNV
 @ma nchar(10), @luong money
@@ -130,7 +131,7 @@ update NHANVIEN set LUONG=@luong where MANV=@ma
 End
 go
 --timkiemNV: Tìm kiếm nhân viên theo mã nhân viên
-create proc timkiemNV
+create or alter proc timkiemNV
 @manv nvarchar(10)
 as begin
 select * from NHANVIEN where MANV=@manv
@@ -424,11 +425,84 @@ go
 			delete from VE where VE.MANV in (select deleted.MANV from deleted)
 			delete from NHANVIEN where manv in (select deleted.MANV from deleted)
 		end
-
+go
 		create or alter trigger xoabienlai on bienlai instead of delete
 		as begin
 			delete from CHITIETBL where CHITIETBL.SOBL in (select deleted.sobl from deleted)
 			delete from BIENLAI where SOBL in (select deleted.sobl from deleted)
 		end
+go
+--Hàm tăng mã trò chơi
 
+Create or Alter function at_ma_ve()
+returns nchar(10)
+as
+begin
+declare @id int
+declare @matc nchar(10)
+if(Select Count(matc) from trochoi)=0
+   set @id=0
+ELSE
+    Select @id= Count(*) from trochoi
+	Select @matc = case
+	    When @id>=0 and @id <9 then 'TC00' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=9 and @id <99 then 'TC0' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=99 then 'TC' + Convert(CHAR, Convert(int,@id)+1)
+	end
+--Kiem tra ton tai
+while(exists(select matc from trochoi where matc=@matc))
+begin
+   set @id=@id+1
+   Select @matc = case
+	    When @id>=0 and @id <9 then 'TC00' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=9 and @id <99 then 'TC0' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=99 then 'TC' + Convert(CHAR, Convert(int,@id)+1)
+   end
+end
+return @matc
 
+end
+go
+
+select dbo.at_ma_ve()
+go
+--Proc thêm trò chơi
+Create or Alter proc themTC  @tentc  nvarchar(50), @makhu nchar(10)
+as
+begin
+declare @matc nchar(10)
+select @matc=dbo.at_ma_ve()
+Insert into TROCHOI(matc, tentc, makhu) 
+values (@matc, @tentc, @makhu)
+end
+go
+--Proc sửa trò chơi
+Create or Alter proc suaTroChoi @maTC nchar(10), @tenTC nvarchar(50), @maKhu nchar(10)
+as
+begin
+Update trochoi 
+set TENTC=@tenTC, MAKHU=@maKhu
+where MATC=@maTC
+end
+go
+--Proc xóa trò chơi
+Create or Alter proc xoaTroChoi @maTC nchar(10)
+as
+begin
+delete from trochoi where MATC=@maTC
+end
+go
+
+--Produce tìm kiếm trò chơi
+Create or Alter function timKiemTroChoi (@tenTC nvarchar(50), @khuTC nchar(10))
+returns Table
+as
+return (Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%')
+go
+--Proc tìm kiếm trò chơi
+Create or Alter proc timKiemTC @tenTC nvarchar(50), @khuTC nchar(10)
+as
+begin
+Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%'
+end
+go
