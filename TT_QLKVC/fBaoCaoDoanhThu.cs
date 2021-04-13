@@ -16,8 +16,19 @@ namespace TT_QLKVC
         public fBaoCaoDoanhThu()
         {
             InitializeComponent();
+            load();
         }
-
+        #region load
+        void load()
+        {
+            DataTable da = new DataTable();
+            da = DataProvider.Instance.ExecuteQuery("Select makhu from khuvuichoi");
+            foreach (DataRow item in da.Rows)
+            {
+                comboBoxKhu.Items.Add(item["makhu"].ToString());
+            }
+        }
+        #endregion
         private void label1_Click(object sender, EventArgs e)
         {
 /*            chart1.Series["serie1"].Points.AddXY("1", 20002);
@@ -37,10 +48,22 @@ namespace TT_QLKVC
         }
         private void btnThongKeDT_Click(object sender, EventArgs e)
         {
-            this.Refresh();
-            chart1.Titles["title1"].Text = "Doanh thu hàng tháng" + " năm " + datepkKT.Value.Year.ToString() + "";
 
-            chart1.Series["serie1"].Points.AddXY("1",10000 );
+           /* chart1.Series.Clear();
+            chart1.Titles["title1"].Text = "Doanh thu hàng tháng" + " năm " + datepkKT.Value.Year.ToString() + "";
+            chart1.Series.Add("Cột");
+            chart1.Series["Cột"].Points.AddXY("1",10000 );*/
+            if(radioButton1.Checked)
+            {
+                //theo tháng: 
+                /*1 thống kê từng khu
+                    2. thống kê tổng*/
+
+            }    else
+            {
+                //theo năm
+
+            }    
         }
     }
 }
