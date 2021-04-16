@@ -33,6 +33,10 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxKhu = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.datepkKT = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTongDoanhThu = new System.Windows.Forms.TextBox();
@@ -41,10 +45,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelThôngTinNhânViên = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.comboBoxKhu = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -72,6 +72,48 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Báo Cáo Doanh Thu";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(158, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Khu";
+            // 
+            // comboBoxKhu
+            // 
+            this.comboBoxKhu.FormattingEnabled = true;
+            this.comboBoxKhu.Items.AddRange(new object[] {
+            "Tất cả"});
+            this.comboBoxKhu.Location = new System.Drawing.Point(161, 37);
+            this.comboBoxKhu.Name = "comboBoxKhu";
+            this.comboBoxKhu.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKhu.TabIndex = 73;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(442, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 17);
+            this.radioButton2.TabIndex = 72;
+            this.radioButton2.Text = "Trong năm";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(442, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(83, 17);
+            this.radioButton1.TabIndex = 71;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Trong tháng";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // datepkKT
             // 
@@ -147,16 +189,16 @@
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "serie1";
+            series1.Name = "Biểu đồ";
             series1.YValuesPerPoint = 4;
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(687, 349);
             this.chart1.TabIndex = 0;
-            this.chart1.Text = "Doanh thu từng tháng";
+            this.chart1.Text = "Doanh thu ";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.ForeColor = System.Drawing.Color.RoyalBlue;
             title1.Name = "title1";
-            title1.Text = "Doanh thu hàng tháng";
+            title1.Text = "Doanh thu ";
             this.chart1.Titles.Add(title1);
             // 
             // labelThôngTinNhânViên
@@ -168,48 +210,6 @@
             this.labelThôngTinNhânViên.Size = new System.Drawing.Size(61, 13);
             this.labelThôngTinNhânViên.TabIndex = 54;
             this.labelThôngTinNhânViên.Text = "Doanh Thu";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(442, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 17);
-            this.radioButton1.TabIndex = 71;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Trong tháng";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(442, 38);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 72;
-            this.radioButton2.Text = "Trong năm";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxKhu
-            // 
-            this.comboBoxKhu.FormattingEnabled = true;
-            this.comboBoxKhu.Items.AddRange(new object[] {
-            "Tất cả"});
-            this.comboBoxKhu.Location = new System.Drawing.Point(161, 37);
-            this.comboBoxKhu.Name = "comboBoxKhu";
-            this.comboBoxKhu.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxKhu.TabIndex = 73;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Khu";
             // 
             // fBaoCaoDoanhThu
             // 

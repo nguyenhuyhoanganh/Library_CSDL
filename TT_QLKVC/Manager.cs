@@ -16,6 +16,7 @@ namespace TT_QLKVC
 
     public partial class Manager : Form
     {
+        public DataTable data;
         private Form activeForm = new Form();//Form đang dùng
 
         private Guna2Button currentBtn;//btuton đang ấn
@@ -43,7 +44,8 @@ namespace TT_QLKVC
             customizeDesing();
             statusSub();
             showStatus(btnStatus1);
-            openForm(new fBanVe());
+            
+
         }
 
         private void openForm(Form form)
@@ -144,7 +146,9 @@ namespace TT_QLKVC
             lbTillerBar.Text = "Home";
             //if (activeForm != null)
             //activeForm.Close();
-            openForm(new fBanVe());
+            fBanVe f = new fBanVe();
+            f.data = data;
+            openForm(f);
         }
 
         #endregion
@@ -187,7 +191,9 @@ namespace TT_QLKVC
                 showStatus(btnStatus5);
                 ActivateButton(sender);
                 hideSubMenu();
-                openForm(new fThongTinTaiKhoan());
+                fThongTinTaiKhoan form = new fThongTinTaiKhoan();
+                form.dt = data;
+                openForm(form);
             }
             else
             {
@@ -352,6 +358,10 @@ namespace TT_QLKVC
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            thanhToan = 0;
+            quanLy = 0;
+            baoCao = 0;
+            thongTinTaiKhoan = 0;
             showStatus(btnStatus1);
             Reset();
             hideSubMenu();
@@ -361,9 +371,16 @@ namespace TT_QLKVC
         {
             this.Close();
         }
+
         #endregion
 
-
+        private void Manager_Load(object sender, EventArgs e)
+        {
+            btnTaiKhoan.Text = data.Rows[0]["TENNV"].ToString();
+            fBanVe f = new fBanVe();
+            f.data = data;
+            openForm(f);
+        }
     }
 
 }
