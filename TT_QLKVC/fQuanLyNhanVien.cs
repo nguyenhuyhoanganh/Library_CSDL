@@ -19,8 +19,8 @@ namespace TT_QLKVC
 {
     public partial class fQuanLyNhanVien : Form
     {
-        string constr = @"Data Source=DESKTOP-7HIL2OS\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
-        //string contr = ConnectionString.str; ghép chương trình làm ơn uncomment cái này
+        //string constr = @"Data Source=DESKTOP-7HIL2OS\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
+        string constr = ConnectionString.str; //ghép chương trình làm ơn uncomment cái này
         public fQuanLyNhanVien()
         {
             InitializeComponent();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbKhu = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -42,7 +43,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnXuatVe = new System.Windows.Forms.Button();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,14 +53,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbMaVe = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbNgay = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbKhu = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -95,6 +95,17 @@
             this.groupBox2.Size = new System.Drawing.Size(948, 639);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
+            // 
+            // cbKhu
+            // 
+            this.cbKhu.BackColor = System.Drawing.SystemColors.Window;
+            this.cbKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhu.FormattingEnabled = true;
+            this.cbKhu.Location = new System.Drawing.Point(134, 173);
+            this.cbKhu.Name = "cbKhu";
+            this.cbKhu.Size = new System.Drawing.Size(244, 24);
+            this.cbKhu.TabIndex = 47;
+            this.cbKhu.SelectedIndexChanged += new System.EventHandler(this.cbKhu_SelectedIndexChanged);
             // 
             // panel11
             // 
@@ -216,7 +227,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnXuatVe);
             this.panel1.Controls.Add(this.numericUpDown3);
             this.panel1.Controls.Add(this.numericUpDown4);
             this.panel1.Controls.Add(this.label10);
@@ -226,22 +237,23 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txbMaVe);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(505, 138);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(424, 391);
             this.panel1.TabIndex = 38;
             // 
-            // button1
+            // btnXuatVe
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(259, 318);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 37);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "In Vé";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXuatVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatVe.Location = new System.Drawing.Point(259, 318);
+            this.btnXuatVe.Name = "btnXuatVe";
+            this.btnXuatVe.Size = new System.Drawing.Size(121, 37);
+            this.btnXuatVe.TabIndex = 52;
+            this.btnXuatVe.Text = "Xuất Vé";
+            this.btnXuatVe.UseVisualStyleBackColor = true;
+            this.btnXuatVe.Click += new System.EventHandler(this.btnXuatVe_Click);
             // 
             // numericUpDown3
             // 
@@ -319,14 +331,13 @@
             this.label16.TabIndex = 39;
             this.label16.Text = "Mã Vé:";
             // 
-            // textBox3
+            // txbMaVe
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(180, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(210, 30);
-            this.textBox3.TabIndex = 38;
+            this.txbMaVe.BackColor = System.Drawing.SystemColors.Window;
+            this.txbMaVe.Location = new System.Drawing.Point(180, 32);
+            this.txbMaVe.Name = "txbMaVe";
+            this.txbMaVe.Size = new System.Drawing.Size(210, 30);
+            this.txbMaVe.TabIndex = 38;
             // 
             // label1
             // 
@@ -389,17 +400,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ngày:";
             // 
-            // cbKhu
-            // 
-            this.cbKhu.BackColor = System.Drawing.SystemColors.Window;
-            this.cbKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhu.FormattingEnabled = true;
-            this.cbKhu.Location = new System.Drawing.Point(134, 173);
-            this.cbKhu.Name = "cbKhu";
-            this.cbKhu.Size = new System.Drawing.Size(244, 24);
-            this.cbKhu.TabIndex = 47;
-            this.cbKhu.SelectedIndexChanged += new System.EventHandler(this.cbKhu_SelectedIndexChanged);
-            // 
             // fBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -435,7 +435,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnXuatVe;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Label label10;
@@ -445,7 +445,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbMaVe;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel11;

@@ -38,6 +38,17 @@ namespace TT_QLKVC
 
         #endregion
 
+        private void phanQuyenNV()
+        {
+            if (data.Rows[0]["MAKHU"].ToString() != "")
+            {
+                btnQuanLy.Enabled = false;
+                //btnQuanLy.PressedColor = CColor.color10;
+                //btnQuanLy.CheckedState.FillColor = CColor.color10;
+                btnBaoCao.Enabled = false;
+            }
+        }
+
         public Manager()
         {
             InitializeComponent();
@@ -376,6 +387,7 @@ namespace TT_QLKVC
 
         private void Manager_Load(object sender, EventArgs e)
         {
+            phanQuyenNV();
             btnTaiKhoan.Text = data.Rows[0]["TENNV"].ToString();
             fBanVe f = new fBanVe();
             f.data = data;
