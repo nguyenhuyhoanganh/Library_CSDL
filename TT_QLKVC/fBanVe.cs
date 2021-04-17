@@ -46,9 +46,13 @@ namespace TT_QLKVC
                 cbKhu.Visible = true;
                 string que = "select * from KHUVUICHOI";
                 DataTable tb = DataProvider.Instance.ExecuteQuery(que);
-                cbKhu.DataSource = tb;
-                cbKhu.DisplayMember = "TENKHU";
-
+                /*cbKhu.DataSource = tb;
+                cbKhu.DisplayMember = "TENKHU";*/
+                foreach (DataRow item in tb.Rows)
+                {
+                    cbKhu.Items.Add(item["TenKHU"]);
+                }
+                cbKhu.SelectedIndex = 0;
                 label4.Text = "Giá Vé Người Lớn: " + tb.Rows[0]["GIAVENL"].ToString();
                 label5.Text = "Giá Vé Trẻ Em: " + tb.Rows[0]["GIAVETE"].ToString();
                 nl = Convert.ToDecimal(tb.Rows[0]["GIAVENL"]);

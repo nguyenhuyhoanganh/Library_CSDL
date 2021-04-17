@@ -306,7 +306,15 @@ namespace TT_QLKVC
         private void btnBCDoanhThu_Click(object sender, EventArgs e)
         {
             ActivateSubButton(btnBCDoanhThu);
-            openForm(new fBaoCaoDoanhThu());
+            try
+            {
+                openForm(new fBaoCaoDoanhThu());
+            }
+            catch
+            {
+                MessageBox.Show("Có lỗi xảy ra");
+            }
+            
         }
 
         private void btnBCLuong_Click(object sender, EventArgs e)

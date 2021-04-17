@@ -18,12 +18,16 @@ namespace TT_QLKVC
         {
             InitializeComponent();
             load();
+            loadCBbox();
         }
         #region Load
         void load()
         {
             groupBox3.Visible = false;
             dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery("Select * from trochoi");
+        }
+        void loadCBbox()
+        {
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery("Select makhu from khuvuichoi");
             foreach (DataRow item in data.Rows)

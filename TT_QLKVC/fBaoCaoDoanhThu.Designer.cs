@@ -28,149 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbTongDoanhThu = new System.Windows.Forms.TextBox();
-            this.dtpkNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.dtpkNgayBatDau = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxKhu = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.datepkKT = new System.Windows.Forms.DateTimePicker();
             this.btnThongKeDT = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtgvDoanhThu = new System.Windows.Forms.DataGridView();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelThôngTinNhânViên = new System.Windows.Forms.Label();
+            this.btTong = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDoanhThu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txbTongDoanhThu);
-            this.groupBox1.Controls.Add(this.dtpkNgayKetThuc);
-            this.groupBox1.Controls.Add(this.dtpkNgayBatDau);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.comboBoxKhu);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.datepkKT);
             this.groupBox1.Controls.Add(this.btnThongKeDT);
             this.groupBox1.Controls.Add(this.label31);
-            this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.labelThôngTinNhânViên);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(948, 640);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(711, 520);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Báo Cáo Doanh Thu";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(683, 560);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Tổng:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(158, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Khu";
             // 
-            // txbTongDoanhThu
+            // comboBoxKhu
             // 
-            this.txbTongDoanhThu.Location = new System.Drawing.Point(734, 556);
-            this.txbTongDoanhThu.Name = "txbTongDoanhThu";
-            this.txbTongDoanhThu.Size = new System.Drawing.Size(197, 22);
-            this.txbTongDoanhThu.TabIndex = 62;
+            this.comboBoxKhu.FormattingEnabled = true;
+            this.comboBoxKhu.Items.AddRange(new object[] {
+            "Tất cả"});
+            this.comboBoxKhu.Location = new System.Drawing.Point(161, 37);
+            this.comboBoxKhu.Name = "comboBoxKhu";
+            this.comboBoxKhu.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKhu.TabIndex = 73;
             // 
-            // dtpkNgayKetThuc
+            // radioButton2
             // 
-            this.dtpkNgayKetThuc.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dtpkNgayKetThuc.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.dtpkNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayKetThuc.Location = new System.Drawing.Point(399, 84);
-            this.dtpkNgayKetThuc.Name = "dtpkNgayKetThuc";
-            this.dtpkNgayKetThuc.Size = new System.Drawing.Size(198, 22);
-            this.dtpkNgayKetThuc.TabIndex = 61;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(442, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 17);
+            this.radioButton2.TabIndex = 72;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Trong năm";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // dtpkNgayBatDau
+            // radioButton1
             // 
-            this.dtpkNgayBatDau.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dtpkNgayBatDau.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.dtpkNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayBatDau.Location = new System.Drawing.Point(155, 84);
-            this.dtpkNgayBatDau.Name = "dtpkNgayBatDau";
-            this.dtpkNgayBatDau.Size = new System.Drawing.Size(198, 22);
-            this.dtpkNgayBatDau.TabIndex = 60;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(442, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(83, 17);
+            this.radioButton1.TabIndex = 71;
+            this.radioButton1.Text = "Trong tháng";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // datepkKT
+            // 
+            this.datepkKT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.datepkKT.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.datepkKT.CustomFormat = "MM/yyyy";
+            this.datepkKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datepkKT.Location = new System.Drawing.Point(287, 38);
+            this.datepkKT.Margin = new System.Windows.Forms.Padding(2);
+            this.datepkKT.Name = "datepkKT";
+            this.datepkKT.Size = new System.Drawing.Size(150, 20);
+            this.datepkKT.TabIndex = 70;
             // 
             // btnThongKeDT
             // 
             this.btnThongKeDT.BackColor = System.Drawing.SystemColors.Window;
             this.btnThongKeDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKeDT.Location = new System.Drawing.Point(668, 65);
+            this.btnThongKeDT.Location = new System.Drawing.Point(530, 15);
+            this.btnThongKeDT.Margin = new System.Windows.Forms.Padding(2);
             this.btnThongKeDT.Name = "btnThongKeDT";
-            this.btnThongKeDT.Size = new System.Drawing.Size(119, 46);
+            this.btnThongKeDT.Size = new System.Drawing.Size(89, 37);
             this.btnThongKeDT.TabIndex = 59;
             this.btnThongKeDT.Text = "Thống Kê";
             this.btnThongKeDT.UseVisualStyleBackColor = false;
+            this.btnThongKeDT.Click += new System.EventHandler(this.btnThongKeDT_Click);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(395, 64);
+            this.label31.Location = new System.Drawing.Point(287, 23);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(106, 17);
+            this.label31.Size = new System.Drawing.Size(29, 13);
             this.label31.TabIndex = 58;
-            this.label31.Text = "Ngày Kết Thúc:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(151, 64);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(100, 17);
-            this.label32.TabIndex = 56;
-            this.label32.Text = "Ngày Bắt Đầu:";
+            this.label31.Text = "Năm";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dtgvDoanhThu);
+            this.panel1.Controls.Add(this.btTong);
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.panel1.Location = new System.Drawing.Point(12, 173);
+            this.panel1.Location = new System.Drawing.Point(9, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(924, 357);
+            this.panel1.Size = new System.Drawing.Size(693, 458);
             this.panel1.TabIndex = 55;
             // 
-            // dtgvDoanhThu
+            // chart1
             // 
-            this.dtgvDoanhThu.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dtgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvDoanhThu.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dtgvDoanhThu.Location = new System.Drawing.Point(0, 0);
-            this.dtgvDoanhThu.Name = "dtgvDoanhThu";
-            this.dtgvDoanhThu.RowHeadersWidth = 51;
-            this.dtgvDoanhThu.RowTemplate.Height = 24;
-            this.dtgvDoanhThu.Size = new System.Drawing.Size(924, 357);
-            this.dtgvDoanhThu.TabIndex = 35;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(3, 50);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Biểu đồ";
+            series2.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(687, 349);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "Doanh thu ";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.RoyalBlue;
+            title2.Name = "title1";
+            title2.Text = "Doanh thu ";
+            this.chart1.Titles.Add(title2);
             // 
             // labelThôngTinNhânViên
             // 
             this.labelThôngTinNhânViên.AutoSize = true;
-            this.labelThôngTinNhânViên.Location = new System.Drawing.Point(9, 153);
+            this.labelThôngTinNhânViên.Location = new System.Drawing.Point(7, 124);
+            this.labelThôngTinNhânViên.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelThôngTinNhânViên.Name = "labelThôngTinNhânViên";
-            this.labelThôngTinNhânViên.Size = new System.Drawing.Size(79, 17);
+            this.labelThôngTinNhânViên.Size = new System.Drawing.Size(61, 13);
             this.labelThôngTinNhânViên.TabIndex = 54;
             this.labelThôngTinNhânViên.Text = "Doanh Thu";
             // 
+            // btTong
+            // 
+            this.btTong.CheckedState.Parent = this.btTong;
+            this.btTong.CustomImages.Parent = this.btTong;
+            this.btTong.Enabled = false;
+            this.btTong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTong.ForeColor = System.Drawing.Color.White;
+            this.btTong.HoverState.Parent = this.btTong;
+            this.btTong.Location = new System.Drawing.Point(458, 405);
+            this.btTong.Name = "btTong";
+            this.btTong.ShadowDecoration.Parent = this.btTong;
+            this.btTong.Size = new System.Drawing.Size(232, 45);
+            this.btTong.TabIndex = 1;
+            this.btTong.Text = "Tổng:";
+            // 
             // fBaoCaoDoanhThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 653);
+            this.ClientSize = new System.Drawing.Size(729, 531);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fBaoCaoDoanhThu";
             this.Text = "fBaoCaoDoanhThu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDoanhThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,15 +225,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbTongDoanhThu;
-        private System.Windows.Forms.DateTimePicker dtpkNgayKetThuc;
-        private System.Windows.Forms.DateTimePicker dtpkNgayBatDau;
         private System.Windows.Forms.Button btnThongKeDT;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dtgvDoanhThu;
         private System.Windows.Forms.Label labelThôngTinNhânViên;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DateTimePicker datepkKT;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxKhu;
+        private Guna.UI2.WinForms.Guna2Button btTong;
     }
 }
