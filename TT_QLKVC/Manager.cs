@@ -272,7 +272,9 @@ namespace TT_QLKVC
         private void btnQuanLyVe_Click(object sender, EventArgs e)
         {
             ActivateSubButton(btnQuanLyVe);
-            openForm(new fQuanLyVe());
+            fQuanLyVe f = new fQuanLyVe();
+            f.dt = data;
+            openForm(f);
         }
         #endregion
 
