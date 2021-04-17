@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxKhu = new System.Windows.Forms.ComboBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.datepkKT = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbTongDoanhThu = new System.Windows.Forms.TextBox();
             this.btnThongKeDT = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelThôngTinNhânViên = new System.Windows.Forms.Label();
+            this.btTong = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -57,8 +56,6 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.datepkKT);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txbTongDoanhThu);
             this.groupBox1.Controls.Add(this.btnThongKeDT);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Controls.Add(this.panel1);
@@ -96,22 +93,22 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(442, 38);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(76, 17);
             this.radioButton2.TabIndex = 72;
+            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Trong năm";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(442, 15);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(83, 17);
             this.radioButton1.TabIndex = 71;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Trong tháng";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
@@ -126,25 +123,6 @@
             this.datepkKT.Name = "datepkKT";
             this.datepkKT.Size = new System.Drawing.Size(150, 20);
             this.datepkKT.TabIndex = 70;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(514, 496);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Tổng:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txbTongDoanhThu
-            // 
-            this.txbTongDoanhThu.Location = new System.Drawing.Point(553, 496);
-            this.txbTongDoanhThu.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTongDoanhThu.Name = "txbTongDoanhThu";
-            this.txbTongDoanhThu.Size = new System.Drawing.Size(149, 20);
-            this.txbTongDoanhThu.TabIndex = 62;
             // 
             // btnThongKeDT
             // 
@@ -171,35 +149,36 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btTong);
             this.panel1.Controls.Add(this.chart1);
             this.panel1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.panel1.Location = new System.Drawing.Point(9, 58);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 434);
+            this.panel1.Size = new System.Drawing.Size(693, 458);
             this.panel1.TabIndex = 55;
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 82);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(3, 50);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Biểu đồ";
-            series1.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Biểu đồ";
+            series2.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(687, 349);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Doanh thu ";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.RoyalBlue;
-            title1.Name = "title1";
-            title1.Text = "Doanh thu ";
-            this.chart1.Titles.Add(title1);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.RoyalBlue;
+            title2.Name = "title1";
+            title2.Text = "Doanh thu ";
+            this.chart1.Titles.Add(title2);
             // 
             // labelThôngTinNhânViên
             // 
@@ -210,6 +189,21 @@
             this.labelThôngTinNhânViên.Size = new System.Drawing.Size(61, 13);
             this.labelThôngTinNhânViên.TabIndex = 54;
             this.labelThôngTinNhânViên.Text = "Doanh Thu";
+            // 
+            // btTong
+            // 
+            this.btTong.CheckedState.Parent = this.btTong;
+            this.btTong.CustomImages.Parent = this.btTong;
+            this.btTong.Enabled = false;
+            this.btTong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTong.ForeColor = System.Drawing.Color.White;
+            this.btTong.HoverState.Parent = this.btTong;
+            this.btTong.Location = new System.Drawing.Point(458, 405);
+            this.btTong.Name = "btTong";
+            this.btTong.ShadowDecoration.Parent = this.btTong;
+            this.btTong.Size = new System.Drawing.Size(232, 45);
+            this.btTong.TabIndex = 1;
+            this.btTong.Text = "Tổng:";
             // 
             // fBaoCaoDoanhThu
             // 
@@ -231,8 +225,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbTongDoanhThu;
         private System.Windows.Forms.Button btnThongKeDT;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel panel1;
@@ -243,5 +235,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxKhu;
+        private Guna.UI2.WinForms.Guna2Button btTong;
     }
 }
