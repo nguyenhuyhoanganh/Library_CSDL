@@ -26,6 +26,9 @@ namespace TT_QLKVC
             button1_Click(sender, e);
             loadGiaVE();
             btnHuy_Click(sender, e);
+            loadMAVETk();
+            rbtnMaVe.Checked = true;
+            dtpkTimKiem.Visible = false;
         }
 
         
@@ -193,6 +196,7 @@ namespace TT_QLKVC
             txbMaVe.Visible = true;
             cbMaVE.Visible = false;
             btnLuu.Text = "Lưu";
+            loadMAVETk();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -232,7 +236,12 @@ namespace TT_QLKVC
             txbMaKhu.Text = cbMaKhu.Text;
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
         }
-
+        private void loadMAVETk()
+        {
+            string que = "Select MAVE from VE";
+            cbMaVETK.DataSource = DataProvider.Instance.ExecuteQuery(que);
+            cbMaVETK.DisplayMember = "MAVE";
+        }
         private void button4_Click(object sender, EventArgs e)
         {//Xóa
             cbMaVE.Visible = true;
@@ -260,6 +269,34 @@ namespace TT_QLKVC
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
             txbMaKhu.Text = DataProvider.Instance.ExecuteQuery(que2).Rows[0]["TENKHU"].ToString();
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string que;
+            if (rbtnMaVe.Checked == true)
+            {
+                que = "Select * from VE where MAVE =N'" + cbMaVETK.Text + "'";
+                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(que);
+            }else if (rbtnNgayBan.Checked == true)
+            {
+                que = "Select * from VE where NGAYBAN ='" + dtpkTimKiem.Value.ToString("MM/dd/yyyy") + "'";
+                dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(que);
+            }
+        }
+
+        private void rbtnMaVe_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbtnMaVe.Checked == true)
+            {
+                cbMaVETK.Visible = true;
+                dtpkTimKiem.Visible = false;
+            }
+            else
+            {
+                cbMaVETK.Visible = false;
+                dtpkTimKiem.Visible = true;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
