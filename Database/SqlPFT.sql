@@ -942,4 +942,32 @@ begin
 Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%'
 end
 go
->>>>>>> f91bcf9cad4b0e9559f714dbc5eea01845acec97:SqlPFT.sql
+--Hàm tăng mã trò chơi
+Create or Alter function at_ma_ve()
+returns nchar(10)
+as
+begin
+declare @id int
+declare @mave nchar(10)
+if(Select Count(MAVE) from VE)=0
+   set @id=0
+ELSE
+    Select @id= Count(*) from VE
+	Select @mave = case
+	    When @id>=0 and @id <9 then 'VE00' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=9 and @id <99 then 'VE0' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=99 then 'VE' + Convert(CHAR, Convert(int,@id)+1)
+	end
+--Kiem tra ton tai
+while(exists(select MAVE from VE where MAVE = @mave))
+begin
+   set @id=@id+1
+   Select @mave = case
+	    When @id>=0 and @id <9 then 'VE00' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=9 and @id <99 then 'VE0' + Convert(CHAR, Convert(int,@id)+1)
+		When @id>=99 then 'VE' + Convert(CHAR, Convert(int,@id)+1)
+   end
+end
+return @mave
+end
+go

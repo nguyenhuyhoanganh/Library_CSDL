@@ -120,7 +120,6 @@ namespace TT_QLKVC
                 {
                     MessageBox.Show("Thêm vé Thành Công");
                     button1_Click(sender, e);
-                    btnHuy_Click(sender, e);
                 }
                 else
                 {
@@ -147,7 +146,6 @@ namespace TT_QLKVC
                 {
                     MessageBox.Show("Sửa vé Thành Công");
                     button1_Click(sender, e);
-                    btnHuy_Click(sender, e);
                 }
                 else
                 {
@@ -162,13 +160,13 @@ namespace TT_QLKVC
                 {
                     MessageBox.Show("Xóa vé Thành Công");
                     button1_Click(sender, e);
-                    btnHuy_Click(sender, e);
                 }
                 else
                 {
                     MessageBox.Show("Xóa Vé Không Thành Công!!!");
                 }
             }
+            btnHuy_Click(sender, e);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
