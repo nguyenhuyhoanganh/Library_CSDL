@@ -82,28 +82,30 @@ namespace TT_QLKVC
 
         private void btnXuatVe_Click(object sender, EventArgs e)
         {
-
             if(numericUpDown4.Value == 0 && numericUpDown3.Value == 0)
             {
                 MessageBox.Show("Chưa Thêm Lượng Khách Vào Vé");
                 return;
             }
-
-
             string maNV = data.Rows[0]["MANV"].ToString();
-
             string maKHU = data.Rows[0]["MAKHU"].ToString();
-            
-
-            string que = "select * from KHUVUICHOI where TENKHU = N'" + cbKhu.Text + "'";
-            DataTable tb = DataProvider.Instance.ExecuteQuery(que);
-
+            DataTable tb = new DataTable();
+            if (cbKhu.Visible == true)
+            {
+                string que = "select * from KHUVUICHOI where TENKHU = N'" + cbKhu.Text + "'";
+                tb = DataProvider.Instance.ExecuteQuery(que);
+            }
+            else
+            {
+                string que = "select * from KHUVUICHOI where MAKHU = N'" + data.Rows[0]["MAKHU"].ToString() + "'";
+                tb = DataProvider.Instance.ExecuteQuery(que);
+            }
+           
             string gVNL = tb.Rows[0]["GIAVENL"].ToString();
             string gVTE = tb.Rows[0]["GIAVETE"].ToString();
 
             if (maKHU == "")
             {
-
                 maKHU = tb.Rows[0]["MAKHU"].ToString();
             }
 
