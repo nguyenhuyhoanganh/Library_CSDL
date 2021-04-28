@@ -215,17 +215,17 @@ WHERE TROCHOI.MAKHU=KHUVUICHOI.MAKHU
 end
 go
 -- themKHUVUICHOI: Thêm khu vui chơi
-create or alter proc themKHUVUICHOI(@makhu nchar(10),@tenkhu nvarchar(50),@giavenl money,@giavete money,@diadiem nvarchar(50))
+create or alter proc themKHUVUICHOI(@makhu nchar(10),@tenkhu nvarchar(50),@giavenl money,@giavete money)
  as begin
- insert into dbo.KHUVUICHOI(MAKHU, TENKHU, GIAVENL, GIAVETE, DIADIEM)
- values(@makhu,@tenkhu,@giavenl,@giavete,@diadiem)
+ insert into dbo.KHUVUICHOI(MAKHU, TENKHU, GIAVENL, GIAVETE)
+ values(@makhu,@tenkhu,@giavenl,@giavete)
  end
 go
 --CapnhatKhuVuiChoi: Cập nhật lại thông tin của khu vui chơi
-create or alter proc CapNhatKhuVuiChoi(@MAKHU nchar(10),@TENKHU nvarchar(50),@GIAVENL money,@GIAVETE money,@DIADIEM nvarchar(50))
+create or alter proc CapNhatKhuVuiChoi(@MAKHU nchar(10),@TENKHU nvarchar(50),@GIAVENL money,@GIAVETE money)
 
 as begin
-update KHUVUICHOI set                      TENKHU=@TENKHU,GIAVENL=@GIAVENL,GIAVETE=@GIAVETE,DIADIEM=@DIADIEM 
+update KHUVUICHOI set                      TENKHU=@TENKHU,GIAVENL=@GIAVENL,GIAVETE=@GIAVETE
              where MAKHU=@MAKHU
 end
 go
