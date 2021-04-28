@@ -57,6 +57,7 @@ namespace TT_QLKVC
                 DataTable dt = new DataTable();
                 using (SqlConnection connec = new SqlConnection(ConnectionString.str))
                 {
+                    fQuanLyNhanVien.usernamenv=txbUsername.Text;
                     connec.Open();
                     string query = "select *  from NHANVIEN where MANV = N'" + txbUsername.Text + "'";
                     SqlCommand com = new SqlCommand(query, connec);

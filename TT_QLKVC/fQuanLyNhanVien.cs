@@ -25,8 +25,8 @@ namespace TT_QLKVC
         {
             InitializeComponent();
         }
-
-        string manv, tennv, makhu, luong, diachi, sdt;
+        public static string usernamenv;
+        string manv, tennv, makhu, luong, diachi, sdt, makhulock;
         string gioitinh, ns;
         //DateTime ns;
         /*
@@ -153,6 +153,8 @@ namespace TT_QLKVC
             load();
             label11.Visible=false;radioButton_auto.Visible=false;textBox_mk.Visible = false;
             txbTen_NV.ReadOnly=true;
+
+
         }
 
 
@@ -320,7 +322,7 @@ namespace TT_QLKVC
             else if (groupBox3.Text == "Sửa thông tin nhân viên")
             {
                 ktgt();
-                if (txbDiaChi.Text == "" || comboBox1.Text == "" || txbMaNhanVien.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
+                if (txbDiaChi.Text == "" || /*comboBox1.Text == "" || */txbMaNhanVien.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
                 {
                     MessageBox.Show("Mời nhập đầy đủ các thông tin của nhân viên này", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -353,7 +355,7 @@ namespace TT_QLKVC
             else if (groupBox3.Text == "Thêm nhân viên")
             {
                 ktgt();
-                if (txbDiaChi.Text == "" || txbLuong_NV.Text == "" || comboBox1.Text == "" || txbMaNhanVien.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
+                if (txbDiaChi.Text == "" || txbLuong_NV.Text == "" || /*comboBox1.Text == "" ||*/ txbMaNhanVien.Text == "" || txbSD_NV.Text == "" || txbTen_NV.Text == "")
                 {
                     MessageBox.Show("Mời nhập đầy đủ các thông tin của nhân viên này", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -433,6 +435,22 @@ namespace TT_QLKVC
                 radioButton_auto.Checked = true;
         }
 
+        private void comboBox_cv_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBox_cv.Text=="Nhân viên" && groupBox3.ForeColor != Color.Black)
+            {
+                comboBox1.Visible = true;
+                comboBox1.Text = "";
+                label2.Visible = true;
+            }    
+            else if(comboBox_cv.Text != "Nhân viên" && groupBox3.ForeColor != Color.Black)
+            {
+                comboBox1.Visible = false;
+                comboBox1.Text = "";
+                label2.Visible = false;
+            }    
+        }
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -443,6 +461,14 @@ namespace TT_QLKVC
 
             load();
             comboBox1_Index();
+           /* using (SqlConnection sqlcon = new SqlConnection(constr))
+            {
+                sqlcon.Open();
+                SqlCommand command = new SqlCommand("select makhu from nhanvien where manv= '"+ usernamenv+"'", sqlcon);
+                txbMaNhanVien.Text = command.ExecuteScalar().ToString();
+            }*/
+
+
         }
         //DataGridViewCellFormattingEventArgs e;
         private void dtgvNV_CellClick(object sender, DataGridViewCellEventArgs e)
