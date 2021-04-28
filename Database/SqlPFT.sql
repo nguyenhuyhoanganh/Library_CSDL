@@ -236,6 +236,32 @@ as begin
 delete from KHUVUICHOI where MAKHU=@MAKHU
 end
 go
+--timkiemtenKVC:Tìm kiếm khu vui chơi theo tên
+
+CREATE OR ALTER proc timkiemtenKVC 
+
+@search nvarchar(10) 
+
+as begin 
+
+select MAKHU as N'Mã khu',TENKHU as N'Tên khu',GIAVENL as N'Giá vé người lớn',GIAVETE as N'Giá vé trẻ em' from KHUVUICHOI where TENKHU like '%' +@search +'%' 
+
+end 
+
+GO
+--timkiemmaKVC:tìm kiếm khu vui chơi theo mã
+CREATE OR ALTER proc timkiemmaKVC
+
+@search nvarchar(10) 
+
+as begin 
+
+select MAKHU as N'Mã khu',TENKHU as N'Tên khu',GIAVENL as N'Giá vé người lớn',GIAVETE as N'Giá vé trẻ em' from KHUVUICHOI where MAKHU like '%' +@search +'%' 
+
+end 
+
+GO
+
 -- Capnhatthongtin: Cập nhật thông tin nhân viên
 create or alter proc Capnhatthongtin (@MANV nchar(10),@TENNV nvarchar(50),@Ngaysinh date,@SDT nchar(10) ,@GIOITINH nchar(3),@DIACHI nvarchar(50),@luong money, @makhu nchar(10))
 as begin
@@ -727,28 +753,7 @@ select TENKHU, TENTC from KHUVUICHOI,TROCHOI
 WHERE TROCHOI.MAKHU=KHUVUICHOI.MAKHU
 end
 go
--- themKHUVUICHOI: Thêm khu vui chơi
-create or alter proc themKHUVUICHOI(@makhu nchar(10),@tenkhu nvarchar(50),@giavenl money,@giavete money,@diadiem nvarchar(50))
- as begin
- insert into dbo.KHUVUICHOI(MAKHU, TENKHU, GIAVENL, GIAVETE, DIADIEM)
- values(@makhu,@tenkhu,@giavenl,@giavete,@diadiem)
- end
-go
---CapnhatKhuVuiChoi: Cập nhật lại thông tin của khu vui chơi
-create or alter proc CapNhatKhuVuiChoi(@MAKHU nchar(10),@TENKHU nvarchar(50),@GIAVENL money,@GIAVETE money,@DIADIEM nvarchar(50))
 
-as begin
-update KHUVUICHOI set                      TENKHU=@TENKHU,GIAVENL=@GIAVENL,GIAVETE=@GIAVETE,DIADIEM=@DIADIEM 
-             where MAKHU=@MAKHU
-end
-go
- -- XoaKhuVuiChoi: Xóa khu vui chơi
-create or alter proc xoaKhuVuiChoi
-         @MAKHU nchar(10)
-as begin
-delete from KHUVUICHOI where MAKHU=@MAKHU
-end
-go
 -- Capnhatthongtin: Cập nhật thông tin nhân viên
 create or alter proc Capnhatthongtin (@MANV nchar(10),@TENNV nvarchar(50),@Ngaysinh date,@SDT nchar(10) ,@GIOITINH nchar(3),@DIACHI nvarchar(50),@luong money, @makhu nchar(10))
 as begin
