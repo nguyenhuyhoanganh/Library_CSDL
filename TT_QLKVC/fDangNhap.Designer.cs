@@ -39,6 +39,8 @@ namespace TT_QLKVC
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txbUsername
@@ -50,7 +52,7 @@ namespace TT_QLKVC
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(199, 15);
             this.txbUsername.TabIndex = 2;
-            this.txbUsername.Text = "NV01";
+            this.txbUsername.Text = "Username";
             this.txbUsername.Click += new System.EventHandler(this.txbUsername_Click);
             // 
             // panel1
@@ -78,7 +80,7 @@ namespace TT_QLKVC
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(180, 15);
             this.txbPassword.TabIndex = 5;
-            this.txbPassword.Text = "1";
+            this.txbPassword.Text = "Password";
             this.txbPassword.Click += new System.EventHandler(this.txbPassword_Click);
             // 
             // guna2Button5
@@ -198,12 +200,35 @@ namespace TT_QLKVC
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(424, 100);
             this.panel3.TabIndex = 9;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnExit
+            // 
+            this.btnExit.AutoRoundedCorners = true;
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnExit.BorderRadius = 15;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnExit.HoverState.FillColor = System.Drawing.SystemColors.Control;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Image = global::TT_QLKVC.Properties.Resources.icons8_macos_close_100;
+            this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExit.Location = new System.Drawing.Point(391, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(33, 33);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fDangNhap
             // 
@@ -222,9 +247,11 @@ namespace TT_QLKVC
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.ForeColor = System.Drawing.SystemColors.Window;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDangNhap";
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +269,6 @@ namespace TT_QLKVC
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

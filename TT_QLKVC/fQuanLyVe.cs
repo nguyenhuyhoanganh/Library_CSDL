@@ -270,7 +270,7 @@ namespace TT_QLKVC
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
             txbMaKhu.Text = DataProvider.Instance.ExecuteQuery(que2).Rows[0]["TENKHU"].ToString();
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
-            dtpkNgayBan.Value = (DateTime)tb.Rows[0]["NGAYBAN"];
+            try { dtpkNgayBan.Value = (DateTime)tb.Rows[0]["NGAYBAN"]; } catch { }
         }
 
         private void button5_Click(object sender, EventArgs e)
