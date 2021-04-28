@@ -1026,7 +1026,7 @@ go
 go
 --Hàm tăng mã trò chơi
 
-Create or Alter function at_ma_ve()
+Create or Alter function at_ma_tc()
 returns nchar(10)
 as
 begin
@@ -1056,14 +1056,14 @@ return @matc
 end
 go
 
-select dbo.at_ma_ve()
+--select dbo.at_ma_ve()
 go
 --Proc thêm trò chơi
 Create or Alter proc themTC  @tentc  nvarchar(50), @makhu nchar(10)
 as
 begin
 declare @matc nchar(10)
-select @matc=dbo.at_ma_ve()
+select @matc=dbo.at_ma_tc()
 Insert into TROCHOI(matc, tentc, makhu) 
 values (@matc, @tentc, @makhu)
 end
@@ -1089,13 +1089,13 @@ go
 Create or Alter function timKiemTroChoi (@tenTC nvarchar(50), @khuTC nchar(10))
 returns Table
 as
-return (Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%')
+return (Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' and MAKHU = @khuTC)
 go
 --Proc tìm kiếm trò chơi
 Create or Alter proc timKiemTC @tenTC nvarchar(50), @khuTC nchar(10)
 as
 begin
-Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' or MAKHU like '%'+@khuTC+'%'
+Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' and MAKHU = @khuTC
 end
 go
 --Hàm tăng mã trò chơi
