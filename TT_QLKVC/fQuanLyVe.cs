@@ -31,6 +31,11 @@ namespace TT_QLKVC
             dtpkTimKiem.Visible = false;
         }
 
+        //private void loadMaKhu()
+        //{
+        //    string q = "select TENKHU from KHU";
+        //    //cbMaKhu.DataSource =  
+        //}
         
         public DataTable loadDL(string a)
         {
@@ -67,16 +72,26 @@ namespace TT_QLKVC
             txbMaNV.Text = dt.Rows[0]["MANV"].ToString();
             string que = "select * from KHUVUICHOI";
             DataTable tb = DataProvider.Instance.ExecuteQuery(que);
-            cbMaKhu.DataSource = tb;
-            cbMaKhu.DisplayMember = "TENKHU";
+            /*cbMaKhu.DataSource = tb;
+            cbMaKhu.DisplayMember = "TENKHU";*/
+            foreach (DataRow item in tb.Rows)
+            {
+                cbMaKhu.Items.Add( item["TENKHU"].ToString());
+            }
+            cbMaKhu.SelectedIndex = 0;
         }
         private void loadDuLieuVeTheoMANV()
         {
             txbMaNV.Text = dt.Rows[0]["MANV"].ToString();
             string que = "select * from VE where MANV = '"+txbMaNV.Text+"'";
             DataTable tb = DataProvider.Instance.ExecuteQuery(que);
-            cbMaVE.DataSource = tb;
-            cbMaVE.DisplayMember = "MAVE";
+            //cbMaVE.DataSource = tb;
+            //cbMaVE.DisplayMember = "MAVE";
+            foreach (DataRow item in tb.Rows)
+            {
+                cbMaVE.Items.Add(item["MAVE"].ToString());
+            }
+            cbMaVE.SelectedIndex = 0;
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
             cbMaKhu.Text = DataProvider.Instance.ExecuteQuery(que2).Rows[0]["TENKHU"].ToString();
         }
@@ -265,8 +280,13 @@ namespace TT_QLKVC
 
             string que = "select * from VE ";
             DataTable tb = DataProvider.Instance.ExecuteQuery(que);
-            cbMaVE.DataSource = tb;
-            cbMaVE.DisplayMember = "MAVE";
+            //cbMaVE.DataSource = tb;
+            //cbMaVE.DisplayMember = "MAVE";
+            foreach (DataRow item in tb.Rows)
+            {
+                cbMaVE.Items.Add(item["MAVE"].ToString());
+            }
+            cbMaVE.SelectedIndex = 0;
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
             txbMaKhu.Text = DataProvider.Instance.ExecuteQuery(que2).Rows[0]["TENKHU"].ToString();
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
@@ -280,13 +300,13 @@ namespace TT_QLKVC
             {
                 que = "Select * from VE where MAVE =N'" + cbMaVETK.Text + "'";
                 dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(que);
-            }else if (rbtnNgayBan.Checked == true)
+            }
+            else if (rbtnNgayBan.Checked == true)
             {
                 que = "Select * from VE where NGAYBAN ='" + dtpkTimKiem.Value.ToString("MM/dd/yyyy") + "'";
                 dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(que);
             }
         }
-
         private void rbtnMaVe_CheckedChanged(object sender, EventArgs e)
         {
             if(rbtnMaVe.Checked == true)

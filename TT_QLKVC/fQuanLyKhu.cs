@@ -14,7 +14,7 @@ namespace TT_QLKVC
 
     public partial class fQuanLyKhu : Form
     {
-        static String connString = @"Data Source=DESKTOP-Q6S8P58\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
+        static String connString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
         SqlConnection conn = new SqlConnection(connString);
         bool them;
         bool sua;
@@ -93,6 +93,7 @@ namespace TT_QLKVC
                 them = false;
                 xoa = false;
                 groupBox3.Visible = true;
+                groupBox3.Text = "Sửa";
                 textBox8.Enabled = true;
                 textBox2.Enabled = true;
                 textBox9.Enabled = true;

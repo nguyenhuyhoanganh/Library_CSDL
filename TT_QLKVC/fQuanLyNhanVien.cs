@@ -262,10 +262,10 @@ namespace TT_QLKVC
             using (SqlConnection sqlcon = new SqlConnection(constr))
             {
                 sqlcon.Open();
-                SqlCommand command = new SqlCommand("exec auto_manv", sqlcon);
+                SqlCommand command = new SqlCommand("exec auto_manv1", sqlcon);
                 txbMaNhanVien.Text = command.ExecuteScalar().ToString(); 
             }
-                txbDiaChi.Text = "";
+            txbDiaChi.Text = "";
             txbLuong_NV.Text = "";
             //txbMaNhanVien.Text = "";
             txbSD_NV.Text = "";
@@ -372,6 +372,7 @@ namespace TT_QLKVC
                     using (SqlConnection sqlcon = new SqlConnection(constr))
                     {
                         sqlcon.Open();
+
                         SqlCommand command = new SqlCommand("execute themnv N'" + txbMaNhanVien.Text + "', N'" + txbTen_NV.Text + "', '" + dtpkNgaySinh_NV.Value + "', N'" + txbSD_NV.Text + "', N'" + gioitinh + "', N'" + txbLuong_NV.Text + "', N'" + comboBox_cv.Text + "', N'" + comboBox1.Text + "', N'" + txbDiaChi.Text + "',N'"+textBox_mk.Text+"'", sqlcon);
                         sqlcon.InfoMessage += new SqlInfoMessageEventHandler(InfoMessageHandler);
                         command.ExecuteNonQuery();
@@ -416,7 +417,7 @@ namespace TT_QLKVC
                 using (SqlConnection sqlcon = new SqlConnection(constr))
                 {
                     sqlcon.Open();
-                    SqlCommand command = new SqlCommand("exec auto_manv", sqlcon);
+                    SqlCommand command = new SqlCommand("exec auto_manv1", sqlcon);
                     txbMaNhanVien.Text = command.ExecuteScalar().ToString();
                 }
                 txbMaNhanVien.ReadOnly = true;
