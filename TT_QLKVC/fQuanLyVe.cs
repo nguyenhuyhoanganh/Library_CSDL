@@ -212,6 +212,8 @@ namespace TT_QLKVC
             cbMaVE.Visible = false;
             btnLuu.Text = "Lưu";
             loadMAVETk();
+            cbMaKhu.Items.Clear();
+            cbMaVE.Items.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -247,8 +249,9 @@ namespace TT_QLKVC
             nmTE.Value = Convert.ToInt32(tb.Rows[0]["SOLUONGTE"]);
             txbTongTien.Text = tb.Rows[0]["TONGTIEN"].ToString();
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
-            cbMaKhu.Text = DataProvider.Instance.ExecuteQuery(que2).Rows[0]["TENKHU"].ToString();
-            txbMaKhu.Text = cbMaKhu.Text;
+            DataTable tb2 = DataProvider.Instance.ExecuteQuery(que2);
+            cbMaKhu.Text =tb2.Rows[0]["TENKHU"].ToString();
+            txbMaKhu.Text = tb2.Rows[0]["TENKHU"].ToString();
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
             try { dtpkNgayBan.Value = (DateTime)tb.Rows[0]["NGAYBAN"]; } catch { };
         }

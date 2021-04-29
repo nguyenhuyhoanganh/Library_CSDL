@@ -27,6 +27,7 @@ namespace TT_QLKVC
             {
                 comboBoxKhu.Items.Add(item["makhu"].ToString());
             }
+            comboBoxKhu.SelectedIndex = 0;
         }
         #endregion
         private void label1_Click(object sender, EventArgs e)
@@ -376,6 +377,19 @@ namespace TT_QLKVC
                 MessageBox.Show("Hãy chọn mã khu");
             }    
                
+        }
+
+        private void comboBoxKhu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxKhu.Text!="Tất cả")
+            {
+                radioButton1.Checked = true;
+                radioButton2.Enabled = false;
+            }
+            else
+            {
+                radioButton2.Enabled = true;
+            }
         }
     }
 }
