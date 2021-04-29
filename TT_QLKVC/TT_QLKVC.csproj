@@ -104,7 +104,7 @@
     <Compile Include="fQuanLyKhu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyKhu.Designer.cs">
+    <Compile Include="fQuanLyKhu.designer.cs">
       <DependentUpon>fQuanLyKhu.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyLoaiDV.cs">
