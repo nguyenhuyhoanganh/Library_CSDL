@@ -16,7 +16,7 @@ namespace TT_QLKVC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fQuanLyKhu());
+            Application.Run(new fDangNhap());
         }
     }
 }

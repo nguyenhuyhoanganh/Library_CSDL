@@ -80,30 +80,24 @@
             // 
             // textBox9
             // 
-<<<<<<< HEAD
             this.textBox9.Location = new System.Drawing.Point(26, 210);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(210, 22);
-=======
             this.textBox9.Location = new System.Drawing.Point(20, 171);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(158, 20);
->>>>>>> 1ca96fd651d25c1032034c93857e30244e3866ae
             this.textBox9.TabIndex = 22;
             // 
             // textBox8
             // 
-<<<<<<< HEAD
             this.textBox8.Location = new System.Drawing.Point(26, 104);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(210, 22);
-=======
             this.textBox8.Location = new System.Drawing.Point(20, 84);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(158, 20);
->>>>>>> 1ca96fd651d25c1032034c93857e30244e3866ae
             this.textBox8.TabIndex = 21;
             // 
             // label3
