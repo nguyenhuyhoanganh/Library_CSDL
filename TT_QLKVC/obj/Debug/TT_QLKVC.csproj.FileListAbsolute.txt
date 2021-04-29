@@ -291,3 +291,7 @@ C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CoreComp
 C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
 C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.exe
 C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
+C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBanVe.resources
+C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDangNhap.resources
+C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDoiMatKhau.resources
+C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThanhToanDichVu.resources
