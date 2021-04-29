@@ -27,6 +27,7 @@ namespace TT_QLKVC
             {
                 comboBoxKhu.Items.Add(item["makhu"].ToString());
             }
+            comboBoxKhu.SelectedIndex = 0;
         }
         #endregion
         private void label1_Click(object sender, EventArgs e)
