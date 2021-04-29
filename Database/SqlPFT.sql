@@ -279,6 +279,22 @@ select MAKHU as N'Mã khu',TENKHU as N'Tên khu',GIAVENL as N'Giá vé người 
 end 
 
 GO
+--auto_makhu :Tự động tăng mã khu
+CREATE OR ALTER     proc [dbo].[auto_makhu]
+as
+begin
+	declare @makhu nchar(10)
+	declare  @id int
+	set @id=0
+	set @makhu='K00'
+	while exists (select MAKHU from KHUVUICHOI where MAKHU = @makhu )
+	begin
+		set @id=@id+1
+		set @makhu= 'K'+ (REPLICATE('0',2- LEN(CAST(@id as varchar)))+CAST(@id as varchar))
+	end
+	select @makhu
+end
+GO
 
 -- Capnhatthongtin: Cập nhật thông tin nhân viên
 create or alter proc Capnhatthongtin (@MANV nchar(10),@TENNV nvarchar(50),@Ngaysinh date,@SDT nchar(10) ,@GIOITINH nchar(3),@DIACHI nvarchar(50),@luong money, @makhu nchar(10))
