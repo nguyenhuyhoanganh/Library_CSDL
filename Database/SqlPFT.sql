@@ -1121,7 +1121,7 @@ begin
 Select * from TROCHOI where TENTC like N'%'+@tenTC+'%' and MAKHU = @khuTC
 end
 go
---Hàm tăng mã trò chơi
+--Hàm tăng mã vé
 Create or Alter function at_ma_ve()
 returns nchar(10)
 as
@@ -1150,3 +1150,99 @@ end
 return @mave
 end
 go
+CREATE OR ALTER proc auto_manv1
+as
+begin
+	declare @manv nchar(10)
+	declare  @id int
+	set @id=0
+	set @manv='NV00'
+	while exists (select manv from NHANVIEN where MANV = @manv )
+	begin
+		set @id=@id+1
+		set @manv= 'NV'+ (REPLICATE('0',2- LEN(CAST(@id as varchar)))+CAST(@id as varchar))
+	end
+	select @manv
+end
+GO
+alter table nhanvien drop constraint automanv
+drop proc exec auto_manv1
+
+
+USE [KHUVUICHOIGIAITRI]
+GO
+
+/****** Object:  StoredProcedure [dbo].[themNV]    Script Date: 4/29/2021 8:36:51 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Thêm nhân viên
+
+create or alter  proc [dbo].[themNV]
+@MANV nchar(10),@TENNV nvarchar(50),@NGAYSINH date, @SDT nchar(10), @GIOITINH 	nchar(3),@LUONG money,@chucvu nvarchar(20),@MAKHU nchar(10),@DIACHI nvarchar(50), @MATKHAU NCHAR(20)
+as begin 
+if(select COUNT(*)from NHANVIEN where MANV =@MANV)>0
+begin
+print(N'Đã có mã nhân viên này mời nhập lại')
+end
+else
+begin
+if( @MAKHU!='')
+insert  into dbo.NHANVIEN(MANV,TENNV,NGAYSINH,SDT,GIOITINH,LUONG,MAKHU,DIACHI,
+MATKHAU, chucvu)
+values(@MANV,@TENNV,@NGAYSINH, @SDT, @GIOITINH,@LUONG,@MAKHU,@DIACHI,@MATKHAU, @chucvu)
+else if(@MAKHU='')
+insert  into dbo.NHANVIEN(MANV,TENNV,NGAYSINH,SDT,GIOITINH,LUONG,DIACHI,
+MATKHAU, chucvu)
+values(@MANV,@TENNV,@NGAYSINH, @SDT, @GIOITINH,@LUONG,@DIACHI,@MATKHAU, @chucvu)
+print(N'Đã thêm nhân viên thành công')
+end
+end
+GO
+
+USE [KHUVUICHOIGIAITRI]
+GO
+/****** Object:  StoredProcedure [dbo].[auto_MaDV]    Script Date: 4/29/2021 8:47:13 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create or ALTER   PROC [dbo].[auto_MaDV]
+as
+begin
+declare @ma_next varchar(10)
+declare @max int
+select @max=COUNT(MADV) + 1 from DICHVU where MADV like '%dv%'
+select @ma_next='dv' + RIGHT('0' + CAST(@max as varchar(8)),8)
+while(exists(select MADV from DICHVU where MADV=@ma_next))
+begin
+     set @max=@max+1
+	 set @ma_next='dv'+ RIGHT('0' + CAST(@max as varchar(7)),7)
+end
+select @ma_next
+end
+
+USE [KHUVUICHOIGIAITRI]
+GO
+/****** Object:  StoredProcedure [dbo].[auto_MaLDV]    Script Date: 4/29/2021 8:46:20 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create or ALTER   PROC [dbo].[auto_MaLDV]
+as
+begin
+declare @ma_next varchar(10)
+declare @max int
+select @max=COUNT(MALDV) + 1 from LOAIDV where MALDV like '%ldv%'
+select @ma_next='ldv' + RIGHT('0' + CAST(@max as varchar(7)),7)
+while(exists(select MALDV from LOAIDV where MALDV=@ma_next))
+begin
+     set @max=@max+1
+	 set @ma_next='ldv'+ RIGHT('0' + CAST(@max as varchar(7)),7)
+end
+select @ma_next
+end
