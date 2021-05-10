@@ -308,6 +308,22 @@ else
 insert DICHVU(MADV, TENDV, DONGIA, MALDV) values(@MADV, @TENDV, @DONGIA, @MALDV)
 end
 go
+
+Create or ALTER   PROC [dbo].[auto_MaLDV]
+as
+begin
+declare @ma_next varchar(10)
+declare @max int
+select @max=COUNT(MALDV) + 1 from LOAIDV where MALDV like '%ldv%'
+select @ma_next='ldv' + RIGHT('0' + CAST(@max as varchar(7)),7)
+while(exists(select MALDV from LOAIDV where MALDV=@ma_next))
+begin
+     set @max=@max+1
+	 set @ma_next='ldv'+ RIGHT('0' + CAST(@max as varchar(7)),7)
+end
+select @ma_next
+end
+go
 -- THEMLOAIDICHVU: Thêm loại dịch vụ cho khu vui chơi
 CREATE OR ALTER PROC THEMlOAIDICHVU 
  
