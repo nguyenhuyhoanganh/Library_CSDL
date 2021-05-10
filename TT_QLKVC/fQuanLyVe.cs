@@ -251,6 +251,7 @@ namespace TT_QLKVC
             string que2 = @"select TENKHU from KHUVUICHOI where MAKHU =N'" + tb.Rows[0]["MAKHU"].ToString() + "'";
             DataTable tb2 = DataProvider.Instance.ExecuteQuery(que2);
             cbMaKhu.Text = tb2.Rows[0]["TENKHU"].ToString();
+            cbMaKhu.Text =tb2.Rows[0]["TENKHU"].ToString();
             txbMaKhu.Text = tb2.Rows[0]["TENKHU"].ToString();
             txbMaNV.Text = tb.Rows[0]["MANV"].ToString();
             try { dtpkNgayBan.Value = (DateTime)tb.Rows[0]["NGAYBAN"]; } catch { };

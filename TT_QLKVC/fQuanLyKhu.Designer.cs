@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.textBox8);
             this.groupBox3.Controls.Add(this.label3);
@@ -78,6 +80,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thay Đổi";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(80, 8);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(123, 17);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "Tự động tạo mã khu";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(26, 210);
@@ -85,6 +99,8 @@
             this.textBox9.Size = new System.Drawing.Size(210, 22);
             this.textBox9.Location = new System.Drawing.Point(20, 171);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox9.Location = new System.Drawing.Point(25, 169);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(158, 20);
             this.textBox9.TabIndex = 22;
@@ -96,6 +112,8 @@
             this.textBox8.Size = new System.Drawing.Size(210, 22);
             this.textBox8.Location = new System.Drawing.Point(20, 84);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Location = new System.Drawing.Point(25, 84);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(158, 20);
             this.textBox8.TabIndex = 21;
@@ -122,7 +140,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 128);
+            this.textBox2.Location = new System.Drawing.Point(25, 127);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 20);
@@ -176,7 +194,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 42);
+            this.textBox1.Location = new System.Drawing.Point(25, 42);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
@@ -379,5 +397,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

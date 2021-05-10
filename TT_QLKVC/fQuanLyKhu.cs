@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Guna.UI2.WinForms;
 
 namespace TT_QLKVC
 {
@@ -57,6 +58,7 @@ namespace TT_QLKVC
                 them = true;
                 sua = false;
                 xoa = false;
+                checkBox1.Checked = true;
                 groupBox3.Visible = true;
                 groupBox3.Text = "Thêm";
                 textBox8.Enabled = true;
@@ -92,8 +94,8 @@ namespace TT_QLKVC
                 sua = true;
                 them = false;
                 xoa = false;
+                checkBox1.Checked = false;
                 groupBox3.Visible = true;
-                groupBox3.Text = "Sửa";
                 textBox8.Enabled = true;
                 textBox2.Enabled = true;
                 textBox9.Enabled = true;
@@ -112,6 +114,7 @@ namespace TT_QLKVC
                 xoa = true;
                 sua = false;
                 them = false;
+                checkBox1.Checked = false;
                 groupBox3.Visible = true;
                 groupBox3.Text = "Xóa";
                 textBox8.Enabled = false;
@@ -187,6 +190,7 @@ namespace TT_QLKVC
                     conn.Open();
                 if (them == true)
                 {
+                    SqlCommand cmd1 = new SqlCommand("execute auto_makhu", conn);
                     SqlCommand cmd = new SqlCommand("themKHUVUICHOI", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MAKHU", textBox1.Text);
@@ -227,6 +231,25 @@ namespace TT_QLKVC
                 MessageBox.Show(e1.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                using (SqlConnection sqlcon = new SqlConnection(connString))
+                {
+                    sqlcon.Open();
+                    SqlCommand command = new SqlCommand("exec auto_makhu", sqlcon);
+                    textBox1.Text = command.ExecuteScalar().ToString();
+                }
+                textBox1.ReadOnly = true;
+            }
+            else if (checkBox1.Checked == false)
+            {
+                textBox1.Text = "";
+                textBox1.ReadOnly = false;
+            }
         }
     }
 }

@@ -378,5 +378,18 @@ namespace TT_QLKVC
             }    
                
         }
+
+        private void comboBoxKhu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxKhu.Text!="Tất cả")
+            {
+                radioButton1.Checked = true;
+                radioButton2.Enabled = false;
+            }
+            else
+            {
+                radioButton2.Enabled = true;
+            }
+        }
     }
 }
