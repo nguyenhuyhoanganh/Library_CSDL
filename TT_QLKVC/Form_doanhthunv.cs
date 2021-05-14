@@ -145,10 +145,10 @@ namespace TT_QLKVC
 
             }
 
-            private DataTable loadchart()
-            {
+            //private DataTable loadchart()
+            //{
 
-            }
+            //}
 
 
         }

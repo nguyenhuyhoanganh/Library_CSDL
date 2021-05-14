@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TT_QLKVC.DAO;
+using System.IO;
+using System.Reflection;
+using Word = Microsoft.Office.Interop.Word;
+using System.Data.SqlClient;
 
 namespace TT_QLKVC
 {
@@ -79,7 +83,7 @@ namespace TT_QLKVC
             decimal tong = (decimal)numericUpDown4.Value * nl + (decimal)numericUpDown3.Value * te;
             txbTong.Text = tong.ToString();
         }
-
+        string maKHU, gVNL, gVTE, maNV;
         private void btnXuatVe_Click(object sender, EventArgs e)
         {
             if(numericUpDown4.Value == 0 && numericUpDown3.Value == 0)
@@ -87,8 +91,8 @@ namespace TT_QLKVC
                 MessageBox.Show("Chưa Thêm Lượng Khách Vào Vé");
                 return;
             }
-            string maNV = data.Rows[0]["MANV"].ToString();
-            string maKHU = data.Rows[0]["MAKHU"].ToString();
+             maNV = data.Rows[0]["MANV"].ToString();
+             maKHU = data.Rows[0]["MAKHU"].ToString();
             DataTable tb = new DataTable();
             if (cbKhu.Visible == true)
             {
@@ -101,8 +105,8 @@ namespace TT_QLKVC
                 tb = DataProvider.Instance.ExecuteQuery(que);
             }
            
-            string gVNL = tb.Rows[0]["GIAVENL"].ToString();
-            string gVTE = tb.Rows[0]["GIAVETE"].ToString();
+             gVNL = tb.Rows[0]["GIAVENL"].ToString();
+             gVTE = tb.Rows[0]["GIAVETE"].ToString();
 
             if (maKHU == "")
             {
@@ -130,5 +134,126 @@ namespace TT_QLKVC
             DataTable b = DataProvider.Instance.ExecuteQuery("select dbo.at_ma_ve() as N'Mã Vé'");
             return b.Rows[0]["Mã Vé"].ToString();
         }
+        private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
+        {
+            object matchCase = true;
+            object matchWholeWord = true;
+            object matchWildCards = false;
+            object matchSoundLike = false;
+            object nmatchAllforms = false;
+            object forward = true;
+            object format = false;
+            object matchKashida = false;
+            object matchDiactitics = false;
+            object matchAlefHamza = false;
+            object matchControl = false;
+            object read_only = false;
+            object visible = true;
+            object replace = 2;
+            object wrap = 1;
+
+            wordApp.Selection.Find.Execute(ref ToFindText,
+                ref matchCase, ref matchWholeWord,
+                ref matchWildCards, ref matchSoundLike,
+                ref nmatchAllforms, ref forward,
+                ref wrap, ref format, ref replaceWithText,
+                ref replace, ref matchKashida,
+                ref matchDiactitics, ref matchAlefHamza,
+                ref matchControl);
+        }
+        string name()
+        {
+            string name;
+            using (SqlConnection sqlcon = new SqlConnection(ConnectionString.str))
+            {
+                sqlcon.Open();
+                SqlCommand command = new SqlCommand("select tennv from nhanvien where manv='" + maNV+ "'", sqlcon);
+                name = command.ExecuteScalar().ToString();
+            }
+            return name;
+
+        }
+        string sumnl()
+        {
+            decimal sum;
+            sum = Convert.ToInt32(gVNL) * numericUpDown4.Value;
+            return sum.ToString();
+        }
+
+        string sumte()
+        {
+            decimal sum;
+            sum = Convert.ToInt32(gVTE) * numericUpDown3.Value;
+            return sum.ToString();
+        }
+        string namekvc()
+        {
+            string name;
+            using (SqlConnection sqlcon = new SqlConnection(ConnectionString.str))
+            {
+                sqlcon.Open();
+                SqlCommand command = new SqlCommand("select tenkhu from khuvuichoi where manv='" + cbKhu.Text + "'", sqlcon);
+                name = command.ExecuteScalar().ToString();
+            }
+            return name;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+            string path = openFileDialog.FileName;
+            CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf\TT_QLKVC\ticket.docx", path);
+        }
+
+        //Creeate the Doc Method
+        private void CreateWordDocument(object filename, object SaveAs)
+        {
+            Word.Application wordApp = new Word.Application();
+            object missing = Missing.Value;
+            Word.Document myWordDoc = null;
+
+            if (File.Exists((string)filename))
+            {
+                object readOnly = false;
+                object isVisible = false;
+                wordApp.Visible = false;
+
+                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing, ref missing);
+                myWordDoc.Activate();
+
+                //find and replace
+                this.FindAndReplace(wordApp, "<slnl>", numericUpDown4.Value.ToString());
+                this.FindAndReplace(wordApp, "<slte>", numericUpDown3.Value.ToString());
+                this.FindAndReplace(wordApp, "<dgln>", gVNL);
+                this.FindAndReplace(wordApp, "<dgte>", gVTE);
+                this.FindAndReplace(wordApp, "<sumte>", sumte());
+                this.FindAndReplace(wordApp, "<sumnl>", sumnl());
+                this.FindAndReplace(wordApp, "<name>", name());
+                this.FindAndReplace(wordApp, "<namekvc>", cbKhu.Text);
+                this.FindAndReplace(wordApp, "<id>", maNV);
+                this.FindAndReplace(wordApp, "<num>", txbMaVe.Text);
+                this.FindAndReplace(wordApp, "<sum>", txbTong.Text);
+                this.FindAndReplace(wordApp, "<date>", dateTimePicker2.Value.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file này!");
+            }
+
+            //Save as
+            myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing);
+
+            myWordDoc.Close();
+            wordApp.Quit();
+            MessageBox.Show("File Created!");
+        }
+
     }
 }
