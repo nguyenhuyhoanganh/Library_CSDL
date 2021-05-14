@@ -295,3 +295,4 @@ C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBanVe.resourc
 C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDangNhap.resources
 C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDoiMatKhau.resources
 C:\Users\minht\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThanhToanDichVu.resources
+C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Form_doanhthunv.resources
