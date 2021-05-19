@@ -326,3 +326,33 @@ C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\bin\Debug\Font
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\bin\Debug\Guna.UI2.dll
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\bin\Debug\Icons8.UI.dll
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.exe.config
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.exe
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\TT_QLKVC.pdb
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\FontAwesome.Sharp.dll
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\Guna.UI2.dll
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\bin\Debug\Icons8.UI.dll
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csprojAssemblyReference.cache
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.ResolveComReference.cache
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBanVe.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBaoCaoDoanhThu.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fBaoCaoLuong.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDangNhap.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fDoiMatKhau.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Form_doanhthunv.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyDichVu.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyKhu.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyLoaiDV.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyNhanVien.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyTroChoi.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fQuanLyVe.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThanhToanDichVu.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThanhToanHoaDon.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.fThongTinTaiKhoan.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Manager.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Properties.Resources.resources
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.GenerateResource.cache
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CoreCompileInputs.cache
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.exe
+D:\Kì 2 năm 3\Thực tập CSDL\Application\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.pdb

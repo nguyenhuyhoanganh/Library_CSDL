@@ -13,6 +13,7 @@ namespace TT_QLKVC
 {
     public partial class fThanhToanDichVu : Form
     {
+        public DataTable dt;
         public fThanhToanDichVu()
         {
             InitializeComponent();
@@ -106,68 +107,91 @@ namespace TT_QLKVC
 
         private void button1_Click(object sender, EventArgs e)
         {
-               
-
-            if(listView1.Items.Count > 0)
+            if(numericUpDown1.Value!=0)
             {
-                //có sẵn 
-                if(Available())
+                if (listView1.Items.Count > 0)
                 {
-                    foreach (ListViewItem item in listView1.Items)
+                    //có sẵn 
+                    if (Available())
                     {
-                        ListViewItem item_temp = new ListViewItem();
-                        if (item.SubItems[0].Text == comboBox2.Text)
+                        foreach (ListViewItem item in listView1.Items)
                         {
-                            int val_temp = Convert.ToInt32(item.SubItems[1].Text);
-                            int Val_new = val_temp + Convert.ToInt32(numericUpDown1.Value);
-                            item.SubItems[1].Text = Val_new.ToString();
+                            ListViewItem item_temp = new ListViewItem();
+                            if (item.SubItems[0].Text == comboBox2.Text)
+                            {
+                                int val_temp = Convert.ToInt32(item.SubItems[1].Text);
+                                int Val_new = val_temp + Convert.ToInt32(numericUpDown1.Value);
+                                item.SubItems[1].Text = Val_new.ToString();
+                            }
                         }
+                        // update database
                     }
-                    // update database
+                    else
+                    {
+                        //add item
+                        if(numericUpDown1.Value>0)
+                        {
+                            string[] arr = new string[2];
+                            arr[0] = comboBox2.Text;
+                            arr[1] = numericUpDown1.Value.ToString();
+                            ListViewItem item = new ListViewItem(arr);
+                            listView1.Items.Add(item);
+                            //+ lưu vào data base
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không được để số bé hơn 1");
+                        }
+
+
+                    }
                 }
                 else
                 {
-                    //add item
-                    string[] arr = new string[2];
-                    arr[0] = comboBox2.Text;
-                    arr[1] = numericUpDown1.Value.ToString();
-                    ListViewItem item = new ListViewItem(arr);
-                    listView1.Items.Add(item);
-                    //+ lưu vào data base
+                    //+layout
+                    loadListView();
+                    if (Available())
+                    {
+                        //update value
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            ListViewItem item_temp = new ListViewItem();
+                            if (item.SubItems[0].Text == comboBox2.Text)
+                            {
+                                int val_temp = Convert.ToInt32(item.SubItems[1]);
+                                int Val_new = val_temp + Convert.ToInt32(numericUpDown1.Value);
+                                item.SubItems[1].Text = val_temp.ToString();
+                            }
+                        }
+                        // update database
+
+
+                    }
+                    else
+                    {
+                        //add item
+                        if(numericUpDown1.Value>0)
+                        {
+                            string[] arr = new string[2];
+                            arr[0] = comboBox2.Text;
+                            arr[1] = numericUpDown1.Value.ToString();
+                            ListViewItem item = new ListViewItem(arr);
+                            listView1.Items.Add(item);
+                            //+ lưu vào data base
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không được để số bé hơn 1");
+                        }    
+                       
+                    }
                 }
-            }
+            }    
             else
             {
-                //+layout
-                loadListView();
-                if(Available())
-                {
-                    //update value
-                    foreach (ListViewItem item in listView1.Items)
-                    {
-                        ListViewItem item_temp = new ListViewItem();
-                        if(item.SubItems[0].Text == comboBox2.Text)
-                        {
-                            int val_temp = Convert.ToInt32(item.SubItems[1]);
-                            int Val_new = val_temp + Convert.ToInt32(numericUpDown1.Value);
-                            item.SubItems[1].Text = val_temp.ToString();
-                        }    
-                    }
-                    // update database
-
-
-                }   
-                else
-                {
-                    //add item
-                    string[] arr = new string[2];
-                    arr[0] = comboBox2.Text;
-                    arr[1] = numericUpDown1.Value.ToString();
-                    ListViewItem item = new ListViewItem(arr);
-                    listView1.Items.Add(item);
-                    //+ lưu vào data base
-                }    
-            }
+                MessageBox.Show("Hãy chọn số lượng");
+            }    
+            
             double total = 0;
             for (int i = 2; i < listView1.Items.Count; i++)
             {

@@ -352,7 +352,7 @@ namespace TT_QLKVC
         private void btnTTHoaDon_Click(object sender, EventArgs e)
         {
             ActivateSubButton(btnTTHoaDon);
-            openForm(new fThanhToanHoaDon());
+            openForm(new fThanhToanDichVu());
         }
 
         #endregion

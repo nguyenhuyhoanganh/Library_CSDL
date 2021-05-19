@@ -91,7 +91,7 @@
             this.panel1.Controls.Add(this.panelIcon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(158, 609);
             this.panel1.TabIndex = 0;
@@ -102,7 +102,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 81);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(158, 528);
             this.panel6.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(0, 1);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(158, 527);
             this.panelMenu.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.btnSignOut.Image = global::TT_QLKVC.Properties.Resources.icons8_exit_96__1_;
             this.btnSignOut.ImageSize = new System.Drawing.Size(30, 30);
             this.btnSignOut.Location = new System.Drawing.Point(11, 479);
-            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnSignOut.ShadowDecoration.Parent = this.btnSignOut;
@@ -158,7 +158,7 @@
             this.panelSubThanhToan.Controls.Add(this.panel15);
             this.panelSubThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubThanhToan.Location = new System.Drawing.Point(5, 462);
-            this.panelSubThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubThanhToan.Name = "panelSubThanhToan";
             this.panelSubThanhToan.Size = new System.Drawing.Size(148, 45);
             this.panelSubThanhToan.TabIndex = 14;
@@ -174,12 +174,12 @@
             this.btnTTHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnTTHoaDon.HoverState.Parent = this.btnTTHoaDon;
             this.btnTTHoaDon.Location = new System.Drawing.Point(0, 1);
-            this.btnTTHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTTHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnTTHoaDon.Name = "btnTTHoaDon";
             this.btnTTHoaDon.ShadowDecoration.Parent = this.btnTTHoaDon;
             this.btnTTHoaDon.Size = new System.Drawing.Size(148, 37);
             this.btnTTHoaDon.TabIndex = 11;
-            this.btnTTHoaDon.Text = "Hóa Đơn";
+            this.btnTTHoaDon.Text = "Hóa Đơn Dịch Vụ";
             this.btnTTHoaDon.Click += new System.EventHandler(this.btnTTHoaDon_Click);
             // 
             // panel15
@@ -187,7 +187,7 @@
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(148, 1);
             this.panel15.TabIndex = 0;
@@ -197,7 +197,7 @@
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(5, 461);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(148, 1);
             this.panel12.TabIndex = 13;
@@ -216,7 +216,7 @@
             this.btnThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThanhToan.ImageSize = new System.Drawing.Size(28, 28);
             this.btnThanhToan.Location = new System.Drawing.Point(5, 424);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.ShadowDecoration.Parent = this.btnThanhToan;
             this.btnThanhToan.Size = new System.Drawing.Size(148, 37);
@@ -232,7 +232,7 @@
             this.panelSubBaoCao.Controls.Add(this.panel13);
             this.panelSubBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubBaoCao.Location = new System.Drawing.Point(5, 343);
-            this.panelSubBaoCao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubBaoCao.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubBaoCao.Name = "panelSubBaoCao";
             this.panelSubBaoCao.Size = new System.Drawing.Size(148, 81);
             this.panelSubBaoCao.TabIndex = 11;
@@ -248,7 +248,7 @@
             this.btnBCLuong.ForeColor = System.Drawing.Color.White;
             this.btnBCLuong.HoverState.Parent = this.btnBCLuong;
             this.btnBCLuong.Location = new System.Drawing.Point(0, 38);
-            this.btnBCLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBCLuong.Margin = new System.Windows.Forms.Padding(2);
             this.btnBCLuong.Name = "btnBCLuong";
             this.btnBCLuong.ShadowDecoration.Parent = this.btnBCLuong;
             this.btnBCLuong.Size = new System.Drawing.Size(148, 37);
@@ -267,7 +267,7 @@
             this.btnBCDoanhThu.ForeColor = System.Drawing.Color.White;
             this.btnBCDoanhThu.HoverState.Parent = this.btnBCDoanhThu;
             this.btnBCDoanhThu.Location = new System.Drawing.Point(0, 1);
-            this.btnBCDoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBCDoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.btnBCDoanhThu.Name = "btnBCDoanhThu";
             this.btnBCDoanhThu.ShadowDecoration.Parent = this.btnBCDoanhThu;
             this.btnBCDoanhThu.Size = new System.Drawing.Size(148, 37);
@@ -280,7 +280,7 @@
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(148, 1);
             this.panel13.TabIndex = 0;
@@ -290,7 +290,7 @@
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(5, 342);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(148, 1);
             this.panel11.TabIndex = 10;
@@ -309,7 +309,7 @@
             this.btnBaoCao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaoCao.ImageSize = new System.Drawing.Size(28, 28);
             this.btnBaoCao.Location = new System.Drawing.Point(5, 305);
-            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.ShadowDecoration.Parent = this.btnBaoCao;
             this.btnBaoCao.Size = new System.Drawing.Size(148, 37);
@@ -323,7 +323,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(5, 304);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(148, 1);
             this.panel10.TabIndex = 8;
@@ -339,7 +339,7 @@
             this.panelSubQuanLy.Controls.Add(this.panel9);
             this.panelSubQuanLy.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubQuanLy.Location = new System.Drawing.Point(5, 76);
-            this.panelSubQuanLy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubQuanLy.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubQuanLy.Name = "panelSubQuanLy";
             this.panelSubQuanLy.Size = new System.Drawing.Size(148, 228);
             this.panelSubQuanLy.TabIndex = 7;
@@ -355,7 +355,7 @@
             this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQLNhanVien.HoverState.Parent = this.btnQLNhanVien;
             this.btnQLNhanVien.Location = new System.Drawing.Point(0, 186);
-            this.btnQLNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQLNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.ShadowDecoration.Parent = this.btnQLNhanVien;
             this.btnQLNhanVien.Size = new System.Drawing.Size(148, 37);
@@ -374,7 +374,7 @@
             this.btnQuanLyVe.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyVe.HoverState.Parent = this.btnQuanLyVe;
             this.btnQuanLyVe.Location = new System.Drawing.Point(0, 149);
-            this.btnQuanLyVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuanLyVe.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuanLyVe.Name = "btnQuanLyVe";
             this.btnQuanLyVe.ShadowDecoration.Parent = this.btnQuanLyVe;
             this.btnQuanLyVe.Size = new System.Drawing.Size(148, 37);
@@ -393,7 +393,7 @@
             this.btnQLTroChoi.ForeColor = System.Drawing.Color.White;
             this.btnQLTroChoi.HoverState.Parent = this.btnQLTroChoi;
             this.btnQLTroChoi.Location = new System.Drawing.Point(0, 112);
-            this.btnQLTroChoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQLTroChoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnQLTroChoi.Name = "btnQLTroChoi";
             this.btnQLTroChoi.ShadowDecoration.Parent = this.btnQLTroChoi;
             this.btnQLTroChoi.Size = new System.Drawing.Size(148, 37);
@@ -412,7 +412,7 @@
             this.btnQLDichVu.ForeColor = System.Drawing.Color.White;
             this.btnQLDichVu.HoverState.Parent = this.btnQLDichVu;
             this.btnQLDichVu.Location = new System.Drawing.Point(0, 75);
-            this.btnQLDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQLDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.btnQLDichVu.Name = "btnQLDichVu";
             this.btnQLDichVu.ShadowDecoration.Parent = this.btnQLDichVu;
             this.btnQLDichVu.Size = new System.Drawing.Size(148, 37);
@@ -431,7 +431,7 @@
             this.btnQLLoaiDichVu.ForeColor = System.Drawing.Color.White;
             this.btnQLLoaiDichVu.HoverState.Parent = this.btnQLLoaiDichVu;
             this.btnQLLoaiDichVu.Location = new System.Drawing.Point(0, 38);
-            this.btnQLLoaiDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQLLoaiDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.btnQLLoaiDichVu.Name = "btnQLLoaiDichVu";
             this.btnQLLoaiDichVu.ShadowDecoration.Parent = this.btnQLLoaiDichVu;
             this.btnQLLoaiDichVu.Size = new System.Drawing.Size(148, 37);
@@ -450,7 +450,7 @@
             this.btnQLKhu.ForeColor = System.Drawing.Color.White;
             this.btnQLKhu.HoverState.Parent = this.btnQLKhu;
             this.btnQLKhu.Location = new System.Drawing.Point(0, 1);
-            this.btnQLKhu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQLKhu.Margin = new System.Windows.Forms.Padding(2);
             this.btnQLKhu.Name = "btnQLKhu";
             this.btnQLKhu.ShadowDecoration.Parent = this.btnQLKhu;
             this.btnQLKhu.Size = new System.Drawing.Size(148, 37);
@@ -463,7 +463,7 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(148, 1);
             this.panel9.TabIndex = 0;
@@ -483,7 +483,7 @@
             this.btnQuanLy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuanLy.ImageSize = new System.Drawing.Size(28, 28);
             this.btnQuanLy.Location = new System.Drawing.Point(5, 39);
-            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuanLy.Name = "btnQuanLy";
             this.btnQuanLy.ShadowDecoration.Parent = this.btnQuanLy;
             this.btnQuanLy.Size = new System.Drawing.Size(148, 37);
@@ -497,7 +497,7 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(5, 38);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(148, 1);
             this.panel8.TabIndex = 5;
@@ -513,7 +513,7 @@
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaiKhoan.HoverState.Parent = this.btnTaiKhoan;
             this.btnTaiKhoan.Location = new System.Drawing.Point(5, 1);
-            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.ShadowDecoration.Parent = this.btnTaiKhoan;
             this.btnTaiKhoan.Size = new System.Drawing.Size(148, 37);
@@ -525,7 +525,7 @@
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(153, 1);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 526);
             this.panel5.TabIndex = 3;
@@ -535,7 +535,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(5, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(153, 1);
             this.panel3.TabIndex = 2;
@@ -544,7 +544,7 @@
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 527);
             this.panel2.TabIndex = 0;
@@ -554,7 +554,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(158, 1);
             this.panel7.TabIndex = 0;
@@ -565,7 +565,7 @@
             this.panelIcon.Controls.Add(this.btnHome);
             this.panelIcon.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelIcon.Location = new System.Drawing.Point(0, 0);
-            this.panelIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelIcon.Margin = new System.Windows.Forms.Padding(2);
             this.panelIcon.Name = "panelIcon";
             this.panelIcon.Size = new System.Drawing.Size(158, 81);
             this.panelIcon.TabIndex = 0;
@@ -580,7 +580,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::TT_QLKVC.Properties.Resources.icons8_theme_park_50;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(158, 81);
             this.btnHome.TabIndex = 0;
@@ -599,7 +599,7 @@
             this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(158, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(728, 81);
             this.panelTitleBar.TabIndex = 1;
@@ -617,7 +617,7 @@
             this.btnStatus5.Image = global::TT_QLKVC.Properties.Resources.icons8_information_64;
             this.btnStatus5.ImageSize = new System.Drawing.Size(30, 30);
             this.btnStatus5.Location = new System.Drawing.Point(8, 31);
-            this.btnStatus5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus5.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatus5.Name = "btnStatus5";
             this.btnStatus5.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnStatus5.ShadowDecoration.Parent = this.btnStatus5;
@@ -647,7 +647,7 @@
             this.btnStatus3.Image = global::TT_QLKVC.Properties.Resources.icons8_combo_chart_96;
             this.btnStatus3.ImageSize = new System.Drawing.Size(27, 27);
             this.btnStatus3.Location = new System.Drawing.Point(8, 31);
-            this.btnStatus3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus3.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatus3.Name = "btnStatus3";
             this.btnStatus3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnStatus3.ShadowDecoration.Parent = this.btnStatus3;
@@ -666,7 +666,7 @@
             this.btnStatus4.Image = global::TT_QLKVC.Properties.Resources.icons8_wallet_50;
             this.btnStatus4.ImageSize = new System.Drawing.Size(30, 30);
             this.btnStatus4.Location = new System.Drawing.Point(8, 31);
-            this.btnStatus4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus4.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatus4.Name = "btnStatus4";
             this.btnStatus4.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnStatus4.ShadowDecoration.Parent = this.btnStatus4;
@@ -685,7 +685,7 @@
             this.btnStatus2.Image = global::TT_QLKVC.Properties.Resources.icons8_tasks_100__4_;
             this.btnStatus2.ImageSize = new System.Drawing.Size(30, 30);
             this.btnStatus2.Location = new System.Drawing.Point(8, 31);
-            this.btnStatus2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus2.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatus2.Name = "btnStatus2";
             this.btnStatus2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnStatus2.ShadowDecoration.Parent = this.btnStatus2;
@@ -704,7 +704,7 @@
             this.btnStatus1.Image = global::TT_QLKVC.Properties.Resources.icons8_theme_park_64;
             this.btnStatus1.ImageSize = new System.Drawing.Size(35, 35);
             this.btnStatus1.Location = new System.Drawing.Point(8, 31);
-            this.btnStatus1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus1.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatus1.Name = "btnStatus1";
             this.btnStatus1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnStatus1.ShadowDecoration.Parent = this.btnStatus1;
@@ -725,7 +725,7 @@
             this.btnMinimize.Image = global::TT_QLKVC.Properties.Resources.icons8_macos_minimize_96;
             this.btnMinimize.ImageSize = new System.Drawing.Size(30, 30);
             this.btnMinimize.Location = new System.Drawing.Point(676, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.ShadowDecoration.Parent = this.btnMinimize;
             this.btnMinimize.Size = new System.Drawing.Size(25, 27);
@@ -746,7 +746,7 @@
             this.btnExit.Image = global::TT_QLKVC.Properties.Resources.icons8_macos_close_96__1_;
             this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
             this.btnExit.Location = new System.Drawing.Point(702, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(25, 27);
@@ -758,7 +758,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(729, 1);
             this.panel4.TabIndex = 0;
@@ -770,7 +770,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForm.Controls.Add(this.panel4);
             this.panelForm.Location = new System.Drawing.Point(158, 81);
-            this.panelForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelForm.Margin = new System.Windows.Forms.Padding(2);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(729, 531);
             this.panelForm.TabIndex = 2;
@@ -784,7 +784,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

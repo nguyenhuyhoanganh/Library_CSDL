@@ -26,8 +26,8 @@ namespace TT_QLKVC.DAO
 
         private DataProvider() { }
 
-        private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
-        //private string connectionString = ConnectionString.str;
+        //private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=KHUVUICHOIGIAITRI;Integrated Security=True";
+        private string connectionString = ConnectionString.str;
 
         #region ExcuteQuery
         public DataTable ExecuteQuery(string query, object[] parameter = null)
