@@ -12,6 +12,7 @@ using System.IO;
 using System.Reflection;
 using Word = Microsoft.Office.Interop.Word;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace TT_QLKVC
 {
@@ -273,8 +274,8 @@ namespace TT_QLKVC
             myWordDoc.Close();
             wordApp.Quit();
             string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
-            //Process.Start(path);
-            System.IO.File.Open(path, FileMode.Open);
+            Process.Start(path);
+            //System.IO.File.Open(path, FileMode.Open);
             MessageBox.Show("File Created!");
         }
 
