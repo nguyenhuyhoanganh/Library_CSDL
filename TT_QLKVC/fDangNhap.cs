@@ -46,7 +46,7 @@ namespace TT_QLKVC
             }
             return data.Rows.Count > 0;
         }
-
+        public static string manv;
         private void btnSignUp_Click(object sender, EventArgs e)
         {
 
@@ -66,7 +66,7 @@ namespace TT_QLKVC
                     try { adapter.Fill(dt); }
                     catch { }
                 }
-
+                manv = txbUsername.Text;
                 f.data = dt;
                 f.ShowDialog();
                 try { this.Show(); }

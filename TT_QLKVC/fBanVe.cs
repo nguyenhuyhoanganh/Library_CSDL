@@ -121,6 +121,17 @@ namespace TT_QLKVC
             if (i != 0)
             {
                 MessageBox.Show("Thêm vé Thành Công");
+
+
+                string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
+                if (Directory.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                    System.IO.File.Copy(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
+                }
+                CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
+
+                //MessageBox.Show(gVNL + " " + gVTE + " " + "1 " + cbKhu.Text + " 2" + namekvc() + " " + " ");
             }
             else
             {
@@ -163,45 +174,54 @@ namespace TT_QLKVC
         }
         string name()
         {
-            string name;
+            string name= "";
             using (SqlConnection sqlcon = new SqlConnection(ConnectionString.str))
             {
                 sqlcon.Open();
-                SqlCommand command = new SqlCommand("select tennv from nhanvien where manv='" + maNV+ "'", sqlcon);
+                SqlCommand command = new SqlCommand("select tennv from nhanvien where manv='" + fDangNhap.manv+ "'", sqlcon);
                 name = command.ExecuteScalar().ToString();
             }
             return name;
 
         }
-        string sumnl()
-        {
-            decimal sum;
-            sum = Convert.ToInt32(gVNL) * numericUpDown4.Value;
-            return sum.ToString();
-        }
+        //string sumnl()
+        //{
+        //    decimal sum;
+        //    sum = Int16.Parse(gVNL) * Int16.Parse(numericUpDown4.Value.ToString());
+        //    return sum.ToString();
+        //}
 
-        string sumte()
-        {
-            decimal sum;
-            sum = Convert.ToInt32(gVTE) * numericUpDown3.Value;
-            return sum.ToString();
-        }
+        //string sumte()
+        //{
+        //    decimal sum;
+        //    sum = Int16.Parse(gVTE) * Int16.Parse(numericUpDown3.Value.ToString());
+        //    return sum.ToString();
+        //}
         string namekvc()
         {
-            string name;
+            string name="";
             using (SqlConnection sqlcon = new SqlConnection(ConnectionString.str))
             {
                 sqlcon.Open();
-                SqlCommand command = new SqlCommand("select tenkhu from khuvuichoi where manv='" + cbKhu.Text + "'", sqlcon);
+                SqlCommand command = new SqlCommand("select tenkhu from khuvuichoi where makhu= (select makhu from nhanvien where manv='" + fDangNhap.manv + "')", sqlcon);
                 name = command.ExecuteScalar().ToString();
             }
             return name;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog.ShowDialog();
-            string path = openFileDialog.FileName;
-            CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf\TT_QLKVC\ticket.docx", path);
+            saveFileDialog.Filter = "Text File|*.docx";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
+                if (Directory.Exists(path))
+                    System.IO.File.Delete(path);
+                System.IO.File.Copy(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
+                CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx",path);
+            }
+
+            MessageBox.Show(gVNL + " " + gVTE + " " + " 0" + cbKhu.Text + " 1"+namekvc() + " " + " ");
         }
 
         //Creeate the Doc Method
@@ -225,15 +245,15 @@ namespace TT_QLKVC
                 myWordDoc.Activate();
 
                 //find and replace
-                this.FindAndReplace(wordApp, "<slnl>", numericUpDown4.Value.ToString());
-                this.FindAndReplace(wordApp, "<slte>", numericUpDown3.Value.ToString());
-                this.FindAndReplace(wordApp, "<dgln>", gVNL);
+                this.FindAndReplace(wordApp, "<sonl>", numericUpDown4.Value.ToString());
+                this.FindAndReplace(wordApp, "<sote>", numericUpDown3.Value.ToString());
+                this.FindAndReplace(wordApp, "<dg>", gVNL);
                 this.FindAndReplace(wordApp, "<dgte>", gVTE);
-                this.FindAndReplace(wordApp, "<sumte>", sumte());
-                this.FindAndReplace(wordApp, "<sumnl>", sumnl());
+                //this.FindAndReplace(wordApp, "<sumte>", sumte());
+                //this.FindAndReplace(wordApp, "<sumnl>", sumnl());
                 this.FindAndReplace(wordApp, "<name>", name());
-                this.FindAndReplace(wordApp, "<namekvc>", cbKhu.Text);
-                this.FindAndReplace(wordApp, "<id>", maNV);
+                this.FindAndReplace(wordApp, "<namekvc>", namekvc());
+                this.FindAndReplace(wordApp, "<id>", fDangNhap.manv);
                 this.FindAndReplace(wordApp, "<num>", txbMaVe.Text);
                 this.FindAndReplace(wordApp, "<sum>", txbTong.Text);
                 this.FindAndReplace(wordApp, "<date>", dateTimePicker2.Value.ToString());
@@ -252,6 +272,9 @@ namespace TT_QLKVC
 
             myWordDoc.Close();
             wordApp.Quit();
+            string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
+            //Process.Start(path);
+            System.IO.File.Open(path, FileMode.Open);
             MessageBox.Show("File Created!");
         }
 

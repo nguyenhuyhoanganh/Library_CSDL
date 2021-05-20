@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.cbKhu = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -60,8 +61,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.groupBox2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -94,12 +95,22 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.groupBox2.Location = new System.Drawing.Point(9, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(711, 519);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 331);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 70);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "In";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbKhu
             // 
@@ -107,7 +118,7 @@
             this.cbKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhu.FormattingEnabled = true;
             this.cbKhu.Location = new System.Drawing.Point(100, 141);
-            this.cbKhu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbKhu.Margin = new System.Windows.Forms.Padding(2);
             this.cbKhu.Name = "cbKhu";
             this.cbKhu.Size = new System.Drawing.Size(184, 21);
             this.cbKhu.TabIndex = 47;
@@ -119,7 +130,7 @@
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel11.Location = new System.Drawing.Point(58, 245);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(225, 1);
             this.panel11.TabIndex = 46;
@@ -130,7 +141,7 @@
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel12.Location = new System.Drawing.Point(0, 0);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(150, 1);
             this.panel12.TabIndex = 5;
@@ -140,7 +151,7 @@
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.panel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(150, 1);
             this.panel13.TabIndex = 6;
@@ -162,7 +173,7 @@
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel8.Location = new System.Drawing.Point(58, 205);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 1);
             this.panel8.TabIndex = 43;
@@ -173,7 +184,7 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(150, 1);
             this.panel9.TabIndex = 5;
@@ -183,7 +194,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(150, 1);
             this.panel10.TabIndex = 6;
@@ -205,7 +216,7 @@
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel5.Location = new System.Drawing.Point(58, 164);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(225, 1);
             this.panel5.TabIndex = 40;
@@ -216,7 +227,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(150, 1);
             this.panel6.TabIndex = 5;
@@ -226,7 +237,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel7.Location = new System.Drawing.Point(0, -68);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(231, 69);
             this.panel7.TabIndex = 6;
@@ -258,7 +269,7 @@
             this.panel1.Controls.Add(this.txbMaVe);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(379, 112);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 318);
             this.panel1.TabIndex = 38;
@@ -267,7 +278,7 @@
             // 
             this.btnXuatVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatVe.Location = new System.Drawing.Point(194, 258);
-            this.btnXuatVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXuatVe.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatVe.Name = "btnXuatVe";
             this.btnXuatVe.Size = new System.Drawing.Size(91, 30);
             this.btnXuatVe.TabIndex = 52;
@@ -278,7 +289,7 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(135, 149);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(158, 26);
             this.numericUpDown3.TabIndex = 51;
@@ -287,7 +298,7 @@
             // numericUpDown4
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(135, 108);
-            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(158, 26);
             this.numericUpDown4.TabIndex = 50;
@@ -306,7 +317,7 @@
             // txbTong
             // 
             this.txbTong.Location = new System.Drawing.Point(135, 188);
-            this.txbTong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTong.Margin = new System.Windows.Forms.Padding(2);
             this.txbTong.Name = "txbTong";
             this.txbTong.Size = new System.Drawing.Size(158, 26);
             this.txbTong.TabIndex = 47;
@@ -325,7 +336,7 @@
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker2.Location = new System.Drawing.Point(135, 65);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(158, 26);
             this.dateTimePicker2.TabIndex = 45;
@@ -364,7 +375,7 @@
             // 
             this.txbMaVe.BackColor = System.Drawing.SystemColors.Window;
             this.txbMaVe.Location = new System.Drawing.Point(135, 26);
-            this.txbMaVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaVe.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaVe.Name = "txbMaVe";
             this.txbMaVe.Size = new System.Drawing.Size(158, 26);
             this.txbMaVe.TabIndex = 38;
@@ -376,9 +387,9 @@
             this.label1.Location = new System.Drawing.Point(152, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 28);
+            this.label1.Size = new System.Drawing.Size(357, 28);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Phần Mền Quản Lý Khu Vui Chơi";
+            this.label1.Text = "Phần Mềm Quản Lý Khu Vui Chơi";
             // 
             // txbNgay
             // 
@@ -387,7 +398,7 @@
             this.txbNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txbNgay.Location = new System.Drawing.Point(596, 18);
-            this.txbNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNgay.Margin = new System.Windows.Forms.Padding(2);
             this.txbNgay.Name = "txbNgay";
             this.txbNgay.ReadOnly = true;
             this.txbNgay.Size = new System.Drawing.Size(106, 19);
@@ -399,7 +410,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel2.Location = new System.Drawing.Point(547, 41);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 1);
             this.panel2.TabIndex = 4;
@@ -410,7 +421,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 1);
             this.panel3.TabIndex = 5;
@@ -420,7 +431,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 1);
             this.panel4.TabIndex = 6;
@@ -436,16 +447,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ngày:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(20, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 70);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "Vé";
@@ -456,7 +457,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 531);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fBanVe";
             this.Text = "fBanVe";
             this.Load += new System.EventHandler(this.fBanVe_Load);
@@ -514,5 +515,6 @@
         private System.Windows.Forms.ComboBox cbKhu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
