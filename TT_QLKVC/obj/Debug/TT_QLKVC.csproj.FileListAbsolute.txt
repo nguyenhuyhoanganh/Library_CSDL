@@ -386,3 +386,5 @@ C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_Q
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.CopyComplete
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.exe
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
+C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\bin\Debug\WinFormAnimation.dll
+C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.Test.resources

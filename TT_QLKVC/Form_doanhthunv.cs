@@ -133,17 +133,51 @@ namespace TT_QLKVC
                     DataTable dataTable = new DataTable();
                     sqlData.Fill(dataTable);
                     dataGridView1.DataSource = dataTable;
-                    MessageBox.Show("EXECUTE tongdoanhthunv '" + start + "','" + end + "");
+                    
+                    //MessageBox.Show("EXECUTE tongdoanhthunv '" + start + "','" + end + "'");
                 }
             }
             else if(comboBox1.Text==type[1])
             {
-
+                using (SqlConnection sqlcon = new SqlConnection(constr))
+                {
+                    sqlcon.Open();
+                    SqlDataAdapter sqlData = new SqlDataAdapter("EXECUTE tongdoanhthuvenv '" + start + "','" + end + "'", sqlcon);
+                    DataTable dataTable = new DataTable();
+                    sqlData.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                    chart1.Series["Series1"].XValueMember = dataTable.Columns[0].ColumnName;
+                    chart1.Series["Series1"].YValueMembers = dataTable.Columns[1].ColumnName;
+                    //MessageBox.Show("EXECUTE tongdoanhthuvenv '" + start + "','" + end + "'");
+                }
             }   
             else if(comboBox1.Text==type[2])
             {
+                using (SqlConnection sqlcon = new SqlConnection(constr))
+                {
+                    sqlcon.Open();
+                    SqlDataAdapter sqlData = new SqlDataAdapter("EXECUTE tongdoanhthublnv '" + start + "','" + end + "'", sqlcon);
+                    DataTable dataTable = new DataTable();
+                    sqlData.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                    //chart1.DataSource = dataTable;
+                    //chart1.DataBindings(dataTable, "")
+                    //chart1.Series["Series1"].XValueMember = dataTable.Columns[0].ColumnName;
+                    //chart1.Series["Series1"].YValueMembers = dataTable.Columns[1].ColumnName;
+                    //MessageBox.Show("EXECUTE tongdoanhthublnv '" + start + "','" + end + "'");
+                }
 
-            }
+                using (SqlConnection sqlcon = new SqlConnection(constr))
+                {
+                    sqlcon.Open();
+                    SqlDataAdapter sqlData = new SqlDataAdapter("EXECUTE tongdoanhthublnv '" + start + "','" + end + "'", sqlcon);
+                    DataTable dataTable = new DataTable();
+                    sqlData.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+                
+
+                }
 
             //private DataTable loadchart()
             //{
