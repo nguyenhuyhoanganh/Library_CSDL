@@ -323,6 +323,11 @@ namespace TT_QLKVC
             openForm(new fBaoCaoLuong());
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ActivateSubButton(guna2Button1);
+            openForm(new Form_doanhthunv());
+        }
         #endregion
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -403,6 +408,8 @@ namespace TT_QLKVC
             f.data = data;
             openForm(f);
         }
+
+
     }
 
 }
