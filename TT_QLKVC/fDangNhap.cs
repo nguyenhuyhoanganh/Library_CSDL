@@ -95,8 +95,13 @@ namespace TT_QLKVC
         private void txbPassword_Click(object sender, EventArgs e)
         {
             if (txbPassword.Text == "Password")
-                txbPassword.Clear();
+                txbPassword.Text="";
             txbPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txbPassword_Enter(object sender, EventArgs e)
+        {
+            
         }
     }
 }

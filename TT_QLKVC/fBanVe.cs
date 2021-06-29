@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TT_QLKVC.DAO;
 using System.IO;
 using System.Reflection;
-using Word = Microsoft.Office.Interop.Word;
+//using Word = Microsoft.Office.Interop.Word;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -65,6 +65,8 @@ namespace TT_QLKVC
             }
 
             txbMaVe.Text = loadMV();
+            numericUpDown3.Value = 0;
+            numericUpDown4.Value = 0;
         }
 
         private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,13 +126,13 @@ namespace TT_QLKVC
                 MessageBox.Show("Thêm vé Thành Công");
 
 
-                string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
-                if (Directory.Exists(path))
-                {
-                    System.IO.File.Delete(path);
-                    System.IO.File.Copy(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
-                }
-                CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
+                //string path = @"~\ticket - Copy.docx";
+                //if (Directory.Exists(path))
+                //{
+                //    File.Delete(path);
+                //    File.Copy(@"~\ticket.docx", path);
+                //}
+               // CreateWordDocument(@"~\ticket.docx", path);
 
                 //MessageBox.Show(gVNL + " " + gVTE + " " + "1 " + cbKhu.Text + " 2" + namekvc() + " " + " ");
             }
@@ -146,33 +148,33 @@ namespace TT_QLKVC
             DataTable b = DataProvider.Instance.ExecuteQuery("select dbo.at_ma_ve() as N'Mã Vé'");
             return b.Rows[0]["Mã Vé"].ToString();
         }
-        private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
-        {
-            object matchCase = true;
-            object matchWholeWord = true;
-            object matchWildCards = false;
-            object matchSoundLike = false;
-            object nmatchAllforms = false;
-            object forward = true;
-            object format = false;
-            object matchKashida = false;
-            object matchDiactitics = false;
-            object matchAlefHamza = false;
-            object matchControl = false;
-            object read_only = false;
-            object visible = true;
-            object replace = 2;
-            object wrap = 1;
+        //private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
+        //{
+        //    object matchCase = true;
+        //    object matchWholeWord = true;
+        //    object matchWildCards = false;
+        //    object matchSoundLike = false;
+        //    object nmatchAllforms = false;
+        //    object forward = true;
+        //    object format = false;
+        //    object matchKashida = false;
+        //    object matchDiactitics = false;
+        //    object matchAlefHamza = false;
+        //    object matchControl = false;
+        //    object read_only = false;
+        //    object visible = true;
+        //    object replace = 2;
+        //    object wrap = 1;
 
-            wordApp.Selection.Find.Execute(ref ToFindText,
-                ref matchCase, ref matchWholeWord,
-                ref matchWildCards, ref matchSoundLike,
-                ref nmatchAllforms, ref forward,
-                ref wrap, ref format, ref replaceWithText,
-                ref replace, ref matchKashida,
-                ref matchDiactitics, ref matchAlefHamza,
-                ref matchControl);
-        }
+        //    wordApp.Selection.Find.Execute(ref ToFindText,
+        //        ref matchCase, ref matchWholeWord,
+        //        ref matchWildCards, ref matchSoundLike,
+        //        ref nmatchAllforms, ref forward,
+        //        ref wrap, ref format, ref replaceWithText,
+        //        ref replace, ref matchKashida,
+        //        ref matchDiactitics, ref matchAlefHamza,
+        //        ref matchControl);
+        //}
         string name()
         {
             string name= "";
@@ -201,83 +203,89 @@ namespace TT_QLKVC
         string namekvc()
         {
             string name="";
-            using (SqlConnection sqlcon = new SqlConnection(ConnectionString.str))
-            {
-                sqlcon.Open();
-                SqlCommand command = new SqlCommand("select tenkhu from khuvuichoi where makhu= (select makhu from nhanvien where manv='" + fDangNhap.manv + "')", sqlcon);
-                name = command.ExecuteScalar().ToString();
-            }
+            name=cbKhu.Text;
             return name;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            saveFileDialog.Filter = "Text File|*.docx";
-            saveFileDialog.ShowDialog();
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            string p= File.ReadAllText(@"path.txt");
+            if(p=="")
             {
-                string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
-                if (Directory.Exists(path))
-                    System.IO.File.Delete(path);
-                System.IO.File.Copy(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx", path);
-                CreateWordDocument(@"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket.docx",path);
-            }
+                MessageBox.Show("Mời chọn thư mục lưu bản mẫu vé(Yêu cầu cho trình in vé):");
+            }   
+            else
+            {
+                saveFileDialog.Filter = "Text File|*.docx";
+                saveFileDialog.ShowDialog();
+                if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string path = @"~\ticket - Copy.docx";
+                    if (Directory.Exists(path))
+                        File.Delete(path);
+                    File.Copy(@"~\ticket.docx", path);
+                   // CreateWordDocument(@"~\ticket.docx", path);
+                }
 
-            MessageBox.Show(gVNL + " " + gVTE + " " + " 0" + cbKhu.Text + " 1"+namekvc() + " " + " ");
+                MessageBox.Show(gVNL + " " + gVTE + " " + " 0" + cbKhu.Text + " 1" + namekvc() + " " + " ");
+            }    
+            
         }
 
         //Creeate the Doc Method
-        private void CreateWordDocument(object filename, object SaveAs)
-        {
-            Word.Application wordApp = new Word.Application();
-            object missing = Missing.Value;
-            Word.Document myWordDoc = null;
+        //private void CreateWordDocument(object filename, object SaveAs)
+        //{
+        //    Word.Application wordApp = new Word.Application();
+        //    object missing = Missing.Value;
+        //    Word.Document myWordDoc = null;
 
-            if (File.Exists((string)filename))
-            {
-                object readOnly = false;
-                object isVisible = false;
-                wordApp.Visible = false;
+        //    if (File.Exists((string)filename))
+        //    {
+        //        object readOnly = false;
+        //        object isVisible = false;
+        //        wordApp.Visible = false;
 
-                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing, ref missing);
-                myWordDoc.Activate();
+        //        myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+        //                                ref missing, ref missing, ref missing,
+        //                                ref missing, ref missing, ref missing,
+        //                                ref missing, ref missing, ref missing,
+        //                                ref missing, ref missing, ref missing, ref missing);
+        //        myWordDoc.Activate();
 
-                //find and replace
-                this.FindAndReplace(wordApp, "<sonl>", numericUpDown4.Value.ToString());
-                this.FindAndReplace(wordApp, "<sote>", numericUpDown3.Value.ToString());
-                this.FindAndReplace(wordApp, "<dg>", gVNL);
-                this.FindAndReplace(wordApp, "<dgte>", gVTE);
-                //this.FindAndReplace(wordApp, "<sumte>", sumte());
-                //this.FindAndReplace(wordApp, "<sumnl>", sumnl());
-                this.FindAndReplace(wordApp, "<name>", name());
-                this.FindAndReplace(wordApp, "<namekvc>", namekvc());
-                this.FindAndReplace(wordApp, "<id>", fDangNhap.manv);
-                this.FindAndReplace(wordApp, "<num>", txbMaVe.Text);
-                this.FindAndReplace(wordApp, "<sum>", txbTong.Text);
-                this.FindAndReplace(wordApp, "<date>", dateTimePicker2.Value.ToString());
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy file này!");
-            }
+        //        //find and replace
+        //        this.FindAndReplace(wordApp, "<sonl>", numericUpDown4.Value.ToString());
+        //        this.FindAndReplace(wordApp, "<sote>", numericUpDown3.Value.ToString());
+        //        this.FindAndReplace(wordApp, "<dg>", gVNL);
+        //        this.FindAndReplace(wordApp, "<dgte>", gVTE);
+        //        //this.FindAndReplace(wordApp, "<sumte>", sumte());
+        //        //this.FindAndReplace(wordApp, "<sumnl>", sumnl());
+        //        this.FindAndReplace(wordApp, "<name>", name());
+        //        this.FindAndReplace(wordApp, "<namekvc>", namekvc());
+        //        this.FindAndReplace(wordApp, "<id>", fDangNhap.manv);
+        //        this.FindAndReplace(wordApp, "<num>", txbMaVe.Text);
+        //        this.FindAndReplace(wordApp, "<sum>", txbTong.Text);
+        //        this.FindAndReplace(wordApp, "<date>", dateTimePicker2.Value.ToString());
+        //        myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
+        //                    ref missing, ref missing, ref missing,
+        //                    ref missing, ref missing, ref missing,
+        //                    ref missing, ref missing, ref missing,
+        //                    ref missing, ref missing, ref missing);
+        //        myWordDoc.Close();
+        //        wordApp.Quit();
+        //        string path = @"~\ticket - Copy.docx";
+        //        Process.Start(path);
+        //        //System.IO.File.Open(path, FileMode.Open);
+        //        MessageBox.Show("File đã được tạo!");
+        //    }
+            //else
+            //{
+            //    MessageBox.Show("File nguồn không đúng đường dẫn, không thể tạo vé!");
+            //}
 
             //Save as
-            myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing);
 
-            myWordDoc.Close();
-            wordApp.Quit();
-            string path = @"C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf1\TT_QLKVC\Word\ticket - Copy.docx";
-            Process.Start(path);
-            //System.IO.File.Open(path, FileMode.Open);
-            MessageBox.Show("File Created!");
-        }
+
+            
+        
 
     }
 }
