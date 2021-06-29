@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,7 +59,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.textBox8);
             this.groupBox3.Controls.Add(this.label3);
@@ -72,33 +70,16 @@
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(518, 2);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(202, 519);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thay Đổi";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(80, 8);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 17);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Tự động tạo mã khu";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(26, 210);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(210, 22);
-            this.textBox9.Location = new System.Drawing.Point(20, 171);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox9.Location = new System.Drawing.Point(25, 169);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
@@ -107,11 +88,6 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(26, 104);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(210, 22);
-            this.textBox8.Location = new System.Drawing.Point(20, 84);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox8.Location = new System.Drawing.Point(25, 84);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
@@ -141,7 +117,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(25, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 20);
             this.textBox2.TabIndex = 8;
@@ -171,7 +147,7 @@
             this.button7.BackColor = System.Drawing.SystemColors.Window;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Location = new System.Drawing.Point(113, 472);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(64, 28);
             this.button7.TabIndex = 3;
@@ -184,7 +160,7 @@
             this.button6.BackColor = System.Drawing.SystemColors.Window;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(25, 472);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(64, 28);
             this.button6.TabIndex = 2;
@@ -195,7 +171,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(25, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 0;
@@ -208,9 +184,9 @@
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Location = new System.Drawing.Point(9, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(505, 104);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -229,7 +205,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(219, 42);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(136, 20);
             this.textBox6.TabIndex = 7;
@@ -248,7 +224,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(48, 42);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(136, 20);
             this.textBox5.TabIndex = 5;
@@ -259,7 +235,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.Window;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(385, 37);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 28);
             this.button5.TabIndex = 2;
@@ -276,9 +252,9 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(9, 110);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(505, 410);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -289,7 +265,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.Window;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(392, 363);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 28);
             this.button4.TabIndex = 4;
@@ -302,7 +278,7 @@
             this.button3.BackColor = System.Drawing.SystemColors.Window;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(164, 363);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(64, 28);
             this.button3.TabIndex = 3;
@@ -315,7 +291,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.Window;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(278, 363);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 28);
             this.button2.TabIndex = 2;
@@ -328,7 +304,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(50, 363);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 28);
             this.button1.TabIndex = 1;
@@ -342,7 +318,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 17);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -358,7 +334,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fQuanLyKhu";
             this.Text = "fQuanLyKhu";
             this.Load += new System.EventHandler(this.fQuanLyKhu_Load);
@@ -397,6 +373,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

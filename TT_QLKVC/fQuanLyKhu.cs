@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Guna.UI2.WinForms;
-
+using System.Text.RegularExpressions;
 namespace TT_QLKVC
 {
 
@@ -43,7 +43,7 @@ namespace TT_QLKVC
         }
         public void Sqlxem()
         {
-            string SqlSELECT = "SELECT MAKHU as N'Mã khu',TENKHU as N'Tên khu',GIAVENL as N'Giá vé người lớn',GIAVETE as N'Giá vé trẻ em' FROM KHUVUICHOI";
+            string SqlSELECT = "SELECT MAKHU as N'Mã khu',TENKHU as N'Tên khu',CAST(GIAVENL as int)as N'Giá vé người lớn',Cast(GIAVETE as int) as N'Giá vé trẻ em' FROM KHUVUICHOI";
             SqlCommand cmd = new SqlCommand(SqlSELECT, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -55,15 +55,25 @@ namespace TT_QLKVC
         {
             try
             {
+                conn.Open();
                 them = true;
                 sua = false;
                 xoa = false;
-                checkBox1.Checked = true;
+                button2.Enabled = false;
+                button4.Enabled = false;
                 groupBox3.Visible = true;
                 groupBox3.Text = "Thêm";
                 textBox8.Enabled = true;
                 textBox2.Enabled = true;
                 textBox9.Enabled = true;
+                SqlCommand cmd1 = new SqlCommand("execute auto_makhu", conn);
+                textBox1.Text = cmd1.ExecuteScalar().ToString();
+                textBox1.Enabled = false;
+                textBox1.BackColor = Color.White;
+                textBox2.Clear();
+                textBox8.Clear();
+                textBox9.Clear();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -91,14 +101,20 @@ namespace TT_QLKVC
         {
             try
             {
+                conn.Open();
+                XoaTextbox();
                 sua = true;
                 them = false;
                 xoa = false;
-                checkBox1.Checked = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
                 groupBox3.Visible = true;
                 textBox8.Enabled = true;
                 textBox2.Enabled = true;
                 textBox9.Enabled = true;
+                textBox1.Enabled = false;
+                textBox1.BackColor = Color.White;
+                conn.Close();
             }
             catch (Exception e1)
             {
@@ -111,15 +127,21 @@ namespace TT_QLKVC
         {
             try
             {
+                conn.Open();
+                XoaTextbox();
                 xoa = true;
                 sua = false;
                 them = false;
-                checkBox1.Checked = false;
+                button3.Enabled = false;
+                button2.Enabled = false;
                 groupBox3.Visible = true;
                 groupBox3.Text = "Xóa";
                 textBox8.Enabled = false;
                 textBox2.Enabled = false;
                 textBox9.Enabled = false;
+                textBox1.ReadOnly = true;
+                textBox1.BackColor = Color.White;
+                conn.Close();
             }
             catch (Exception e1)
             {
@@ -130,27 +152,18 @@ namespace TT_QLKVC
         private void button5_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
+            
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                if (textBox5.Text.Length>0)
-            {
-                    SqlCommand cmd = new SqlCommand("execute timkiemmaKVC N'" + textBox5.Text + "'", conn);
-                    cmd.Parameters.AddWithValue("@search", textBox5.Text);
+                    SqlCommand cmd = new SqlCommand("execute timkiemmaKVC N'" + textBox5.Text + "', N'" + textBox6.Text + "'", conn);
+                    cmd.Parameters.AddWithValue("@makhu", textBox5.Text);
+                    cmd.Parameters.AddWithValue("@tenkhu", textBox6.Text);
                     SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dt = new DataTable();
                     dt.Load(dr);
                     dataGridView1.DataSource = dt;
-            }
-            else if(textBox6.Text.Length>0)
-            {
-                    SqlCommand cmd = new SqlCommand("execute timkiemtenKVC N'" + textBox6.Text + "'", conn);
-                    cmd.Parameters.AddWithValue("@search", textBox6.Text);
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    DataTable dt = new DataTable();
-                    dt.Load(dr);
-                    dataGridView1.DataSource = dt;
-            }
+            
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
@@ -162,24 +175,27 @@ namespace TT_QLKVC
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            textBox6.Text = "";
             groupBox3.Visible = false;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            textBox5.Text = "";
             groupBox3.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            conn.Close();
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
             button1_Click(sender, e);
         }
 
         private void fQuanLyKhu_Load(object sender, EventArgs e)
         {
             groupBox3.Visible = false;
+            button1_Click(sender, e);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -190,15 +206,48 @@ namespace TT_QLKVC
                     conn.Open();
                 if (them == true)
                 {
-                    SqlCommand cmd1 = new SqlCommand("execute auto_makhu", conn);
-                    SqlCommand cmd = new SqlCommand("themKHUVUICHOI", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MAKHU", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@TENKHU", textBox8.Text);
-                    cmd.Parameters.AddWithValue("@GIAVENL", int.Parse(textBox2.Text));
-                    cmd.Parameters.AddWithValue("@GIAVETE", int.Parse(textBox9.Text));
-                    cmd.ExecuteNonQuery();
-                    button1_Click(sender, e);
+                    int i;
+                    if (textBox1.Text != "" && textBox8.Text != ""&&textBox9.Text!=""&&textBox8.Text!="")
+                    {
+                        SqlCommand cmd = new SqlCommand("themKHUVUICHOI", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MAKHU", textBox1.Text);
+                        if (Regex.IsMatch(textBox8.Text, "\\d") == true)
+                        {
+                            MessageBox.Show("Tên khu là 1 chuỗi ký tự từ A-Z", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@TENKHU", textBox8.Text);
+                        }
+                        if (Regex.IsMatch(textBox2.Text, "\\d") == false)
+                        {
+                            MessageBox.Show("Giá vé người lớn là số tự nhiên lớn hơn 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@GIAVENL", int.Parse(textBox2.Text));
+                        }
+                        if (Regex.IsMatch(textBox9.Text, "\\d") == false)
+                        {
+                            MessageBox.Show("Giá vé trẻ em là số tự nhiên lớn hơn 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@GIAVETE", int.Parse(textBox9.Text));
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Thêm thành công");
+                        button2.Enabled = true;
+                        button3.Enabled = true;
+                        button4.Enabled = true;
+                        button1_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    conn.Close();
 
 
                 }
@@ -207,20 +256,51 @@ namespace TT_QLKVC
                     SqlCommand cmd = new SqlCommand("CapNhatKhuVuiChoi", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MAKHU", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@TENKHU", textBox8.Text);
-                    cmd.Parameters.AddWithValue("@GIAVENL", int.Parse(textBox2.Text));
-                    cmd.Parameters.AddWithValue("@GIAVETE", int.Parse(textBox9.Text));
+                    if (Regex.IsMatch(textBox8.Text, "\\d") == true)
+                    {
+                        MessageBox.Show("Tên khu là 1 chuỗi ký tự từ A-Z", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@TENKHU", textBox8.Text);
+                    }
+                    if (Regex.IsMatch(textBox2.Text, "\\d") == false)
+                    {
+                        MessageBox.Show("Giá vé người lớn là số tự nhiên lớn hơn 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@GIAVENL", int.Parse(textBox2.Text));
+                    }
+                    if (Regex.IsMatch(textBox9.Text, "\\d") == false)
+                    {
+                        MessageBox.Show("Giá vé trẻ em là số tự nhiên lớn hơn 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@GIAVETE", int.Parse(textBox9.Text));
+                    }
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Sửa thông tin thành công");
                     button1_Click(sender, e);
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
                     XoaTextbox();
+                    conn.Close();
 
                 }
                 else if (xoa == true)
                 {
                     SqlCommand cmd = new SqlCommand("Delete from KHUVUICHOI where MAKHU='" + textBox1.Text + "'", conn);
-                    cmd.ExecuteNonQuery();;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa thành công");
                     button1_Click(sender, e);
                     XoaTextbox();
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    conn.Close();
 
                 }
                 if (conn.State == ConnectionState.Open)
@@ -233,23 +313,5 @@ namespace TT_QLKVC
             
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-            {
-                using (SqlConnection sqlcon = new SqlConnection(connString))
-                {
-                    sqlcon.Open();
-                    SqlCommand command = new SqlCommand("exec auto_makhu", sqlcon);
-                    textBox1.Text = command.ExecuteScalar().ToString();
-                }
-                textBox1.ReadOnly = true;
-            }
-            else if (checkBox1.Checked == false)
-            {
-                textBox1.Text = "";
-                textBox1.ReadOnly = false;
-            }
-        }
     }
 }

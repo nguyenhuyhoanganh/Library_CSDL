@@ -388,3 +388,7 @@ C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_Q
 C:\Users\minht\Source\Repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.pdb
 C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\bin\Debug\WinFormAnimation.dll
 C:\Users\minht\source\repos\nguyenhuyhoanganh\NhomLoonf2\TT_QLKVC\obj\Debug\TT_QLKVC.Test.resources
+C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\bin\Debug\WinFormAnimation.dll
+C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.csproj.ResolveComReference.cache
+C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Form_doanhthunv.resources
+C:\Users\Long\Source\Repos\NhomLoonf\TT_QLKVC\obj\Debug\TT_QLKVC.Test.resources
