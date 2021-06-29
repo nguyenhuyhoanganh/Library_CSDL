@@ -165,6 +165,9 @@ namespace TT_QLKVC
                             MessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             load();
                             clear();
+                            groupBox3.Text = "Thông tin loại dịch vụ";
+                            groupBox3.ForeColor = Color.Black;
+                            readmode();
                         }
                         else
                         {
@@ -193,6 +196,9 @@ namespace TT_QLKVC
                             MessageBox.Show("Sửa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             load();
                             clear();
+                            groupBox3.Text = "Thông tin loại dịch vụ";
+                            groupBox3.ForeColor = Color.Black;
+                            readmode();
                         }
                         else
                         {
@@ -218,6 +224,9 @@ namespace TT_QLKVC
                         MessageBox.Show("Thêm loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         clear();
                         load();
+                        groupBox3.Text = "Thông tin loại dịch vụ";
+                        groupBox3.ForeColor = Color.Black;
+                        readmode();
                     }
                     else
                     {
@@ -259,7 +268,7 @@ namespace TT_QLKVC
             }
             else
             {
-                txbMaLDV.ReadOnly = false;
+                txbMaLDV.ReadOnly = true;
                 txbTenLDV.ReadOnly = false;
                 btnLuu.Visible = true;
                 btnHuy.Visible = true;

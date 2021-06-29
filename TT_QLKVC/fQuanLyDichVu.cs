@@ -49,20 +49,24 @@ namespace TT_QLKVC
             if (dtgvDichVu.SelectedCells.Count > 0)
             {
                 string id = dtgvDichVu.SelectedCells[0].OwningRow.Cells["Mã loại dịch vụ"].Value.ToString();
-                LoaiDV loaiDV = LoaiDVDAO.Instance.GetListLoaiDichVuById(id);
-                cbMaLDV.SelectedItem = loaiDV;
-                int index = -1;
-                int i = 0;
-                foreach (LoaiDV item in cbMaLDV.Items)
+                if (id != "")
                 {
-                    if (item.MALDV == loaiDV.MALDV)
+                    LoaiDV loaiDV = LoaiDVDAO.Instance.GetListLoaiDichVuById(id);
+                    cbMaLDV.SelectedItem = loaiDV;
+                    int index = -1;
+                    int i = 0;
+                    foreach (LoaiDV item in cbMaLDV.Items)
                     {
-                        index = i;
-                        break;
+                        if (item.MALDV == loaiDV.MALDV)
+                        {
+                            index = i;
+                            break;
+                        }
+                        i++;
                     }
-                    i++;
+                    cbMaLDV.SelectedIndex = index;
                 }
-                cbMaLDV.SelectedIndex = index;
+
             }
         }
 
@@ -231,6 +235,9 @@ namespace TT_QLKVC
                             MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             load();
                             clear();
+                            groupBox3.Text = "Thông tin dịch vụ";
+                            groupBox3.ForeColor = Color.Black;
+                            readmode();
                         }
                         else
                         {
@@ -259,6 +266,9 @@ namespace TT_QLKVC
                             MessageBox.Show("Sửa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             load();
                             clear();
+                            groupBox3.Text = "Thông tin dịch vụ";
+                            groupBox3.ForeColor = Color.Black;
+                            readmode();
                         }
                         else
                         {
@@ -285,6 +295,9 @@ namespace TT_QLKVC
                         MessageBox.Show("Thêm loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         load();
                         clear();
+                        groupBox3.Text = "Thông tin dịch vụ";
+                        groupBox3.ForeColor = Color.Black;
+                        readmode();
                     }
                     else
                     {
